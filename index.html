@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MelodyMelonTap v2.27.1 Home Screen Start Flow</title><link rel="manifest" href="manifest.json"/><link rel="icon" href="icon.png"/><meta name="theme-color" content="#df1f2d"/><style>
+<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MelodyMelonTap v2.27.3 Center Melon Refined</title><link rel="manifest" href="manifest.json"/><link rel="icon" href="icon.png"/><meta name="theme-color" content="#df1f2d"/><style>
 :root{
   --theme:#df1f2d; --theme2:#ff4d5e; --soft:#fff1f2; --soft2:#ffe4e6;
   --ink:#1f2933; --muted:#6b7280; --card:#ffffff; --line:#eceff3;
@@ -39,47 +39,105 @@ body.state-rot{--theme:#5f6368;--theme2:#8a9098;--soft:#f3f4f6;--soft2:#e5e7eb;b
   align-items:center
 }
 .heroVisual{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.waterWrap{position:relative;width:100%;min-height:228px;display:flex;align-items:center;justify-content:center}
+
+.waterWrap{
+  position:relative;width:100%;min-height:238px;display:flex;align-items:center;justify-content:center;
+  isolation:isolate
+}
+.waterWrap::after{
+  content:"";position:absolute;left:50%;bottom:20px;transform:translateX(-50%);
+  width:156px;height:22px;border-radius:50%;
+  background:radial-gradient(ellipse at center, rgba(0,0,0,.18) 0, rgba(0,0,0,.08) 48%, transparent 75%);
+  filter:blur(3px);z-index:0
+}
 .watermelon{
   --melon-flesh:#ff5252; --melon-ring:#ef2b2d;
-  width:196px;height:196px;border-radius:50%;
-  background:radial-gradient(circle at 46% 42%, #ffffff 0 58%, #f6f7f8 78%, #ffffff 100%);
+  width:206px;height:206px;border-radius:50%;
+  background:
+    radial-gradient(circle at 48% 38%, rgba(255,255,255,.98) 0 56%, rgba(244,246,248,.96) 78%, rgba(255,255,255,.92) 100%);
   border:8px solid var(--melon-ring);
-  box-shadow:0 12px 26px rgba(0,0,0,.14);
-  position:relative;overflow:hidden;display:block
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,.76),
+    0 14px 30px rgba(0,0,0,.13);
+  position:relative;overflow:hidden;display:block;z-index:1
+}
+.watermelon::before{
+  content:"";position:absolute;inset:8px;border-radius:50%;
+  background:radial-gradient(circle at 34% 26%, rgba(255,255,255,.62) 0 10%, transparent 22%);
+  pointer-events:none
 }
 .melonWhole{
-  position:absolute;left:28px;top:34px;width:132px;height:96px;border-radius:52% 48% 49% 51%/55% 51% 49% 45%;
+  position:absolute;left:24px;top:32px;width:142px;height:120px;
+  border-radius:50%;
   background:
-   radial-gradient(circle at 16% 62%, #f5d16a 0 3px, transparent 4px),
-   repeating-linear-gradient(18deg, rgba(182,222,88,.98) 0 7px, rgba(40,114,38,.98) 7px 20px, rgba(18,76,33,.98) 20px 34px),
-   linear-gradient(135deg,#1d5e2e,#77b03c);
-  transform:rotate(-7deg);
-  box-shadow:0 12px 18px rgba(0,0,0,.2)
+    radial-gradient(circle at 18% 58%, #edd46d 0 3px, transparent 4px),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.08) 0 46%, transparent 65%),
+    repeating-linear-gradient(14deg,
+      #1e5a2d 0 14px,
+      #95c84b 14px 24px,
+      #1f6b33 24px 40px,
+      #b5dc58 40px 49px,
+      #1a5229 49px 63px);
+  box-shadow:
+    inset -10px -12px 20px rgba(0,0,0,.12),
+    inset 10px 8px 18px rgba(255,255,255,.12),
+    0 12px 18px rgba(0,0,0,.16);
+  transform:rotate(-14deg);
+  z-index:2
+}
+.melonWhole::before{
+  content:"";position:absolute;left:18px;top:16px;width:48px;height:28px;border-radius:50%;
+  background:radial-gradient(ellipse at center, rgba(255,255,255,.42) 0, rgba(255,255,255,.18) 48%, transparent 75%);
+  transform:rotate(-18deg)
+}
+.melonWhole::after{
+  content:"";position:absolute;left:60px;top:-15px;width:28px;height:24px;
+  border:5px solid #70853c;border-left:0;border-bottom:0;border-radius:0 20px 0 0;
+  transform:rotate(-12deg)
 }
 .melonSlice{
-  position:absolute;left:52px;top:116px;width:124px;height:58px;
-  clip-path:polygon(2% 0, 100% 0, 92% 100%, 8% 100%);
-  border-radius:0 0 72px 72px/0 0 58px 58px;
+  position:absolute;left:58px;top:118px;width:128px;height:66px;
+  clip-path:polygon(0 0,100% 0,92% 100%,9% 100%);
+  border-radius:0 0 84px 84px/0 0 66px 66px;
   background:
-    radial-gradient(circle at 24% 52%, #1d1d1f 0 2px, transparent 3px),
-    radial-gradient(circle at 38% 44%, #1d1d1f 0 2px, transparent 3px),
-    radial-gradient(circle at 52% 57%, #1d1d1f 0 2px, transparent 3px),
-    radial-gradient(circle at 68% 47%, #1d1d1f 0 2px, transparent 3px),
-    radial-gradient(circle at 82% 58%, #1d1d1f 0 2px, transparent 3px),
-    linear-gradient(to bottom, var(--melon-flesh) 0 74%, #fff2f2 75% 82%, #7ab849 83% 100%);
-  box-shadow:0 10px 16px rgba(0,0,0,.15)
+    radial-gradient(circle at 18% 54%, #161616 0 2px, transparent 3px),
+    radial-gradient(circle at 28% 45%, #161616 0 2px, transparent 3px),
+    radial-gradient(circle at 39% 58%, #161616 0 2px, transparent 3px),
+    radial-gradient(circle at 52% 47%, #161616 0 2px, transparent 3px),
+    radial-gradient(circle at 66% 60%, #161616 0 2px, transparent 3px),
+    radial-gradient(circle at 79% 49%, #161616 0 2px, transparent 3px),
+    linear-gradient(to bottom,
+      color-mix(in srgb, var(--melon-flesh) 96%, #fffbfb) 0 71%,
+      #fff4f1 72% 82%,
+      #96c95b 83% 100%);
+  box-shadow:
+    inset 0 -8px 12px rgba(255,255,255,.12),
+    0 12px 18px rgba(0,0,0,.18);
+  transform:rotate(-3deg);
+  z-index:3
+}
+.melonSlice::before{
+  content:"";position:absolute;left:10px;right:10px;top:8px;height:14px;
+  background:radial-gradient(ellipse at center, rgba(255,255,255,.22) 0, transparent 70%);
+  border-radius:50%
+}
+.melonSlice::after{
+  content:"";position:absolute;left:-6px;right:-6px;bottom:-8px;height:16px;
+  background:radial-gradient(ellipse at center, rgba(0,0,0,.13) 0, transparent 72%);
+  filter:blur(2px);z-index:-1
 }
 .tapAgainBtn{
-  position:absolute;right:10px;bottom:24px;transform:none;
-  width:66px;height:66px;border:4px solid #fff;border-radius:50%;
-  background:linear-gradient(135deg,var(--theme),var(--theme2));display:grid;place-items:center;
-  color:#fff;box-shadow:0 10px 18px rgba(0,0,0,.16);cursor:pointer
+  position:absolute;right:12px;bottom:22px;transform:none;
+  width:72px;height:72px;border:5px solid #fff;border-radius:50%;
+  background:linear-gradient(135deg,var(--theme),var(--theme2));
+  display:grid;place-items:center;color:#fff;
+  box-shadow:0 12px 20px rgba(0,0,0,.16);cursor:pointer;z-index:4
 }
-.tapAgainIcon{width:auto;height:auto;border-radius:0;background:transparent;color:#fff;display:block;font-size:1.5rem;box-shadow:none}
+.tapAgainIcon{width:auto;height:auto;border-radius:0;background:transparent;color:#fff;display:block;font-size:1.65rem;box-shadow:none}
 .tapAgainLabel{display:none}
-.knockCount{font-size:1.03rem;color:#1f2937;font-weight:800}
+.knockCount{font-size:1.08rem;color:#1f2937;font-weight:800}
 .knockCount b{color:var(--theme)}
+
 
 .heroInfo{
   background:linear-gradient(180deg,#ffffff, color-mix(in srgb,var(--soft) 82%, #fff));
@@ -183,11 +241,11 @@ ul{margin-top:0;margin-bottom:0}
   .wrap{padding:16px 12px 26px}
   .brand{font-size:1.32rem}
   .hero{grid-template-columns: 1fr .92fr}
-  .waterWrap{min-height:204px}
-  .watermelon{width:172px;height:172px}
-  .melonWhole{left:25px;top:30px;width:118px;height:86px}
-  .melonSlice{left:46px;top:102px;width:112px;height:52px}
-  .tapAgainBtn{width:60px;height:60px;right:4px;bottom:20px}
+  .waterWrap{min-height:214px}
+  .watermelon{width:184px;height:184px}
+  .melonWhole{left:22px;top:30px;width:126px;height:104px}
+  .melonSlice{left:50px;top:108px;width:116px;height:58px}
+  .tapAgainBtn{width:64px;height:64px;right:6px;bottom:18px}
   .ripeness{font-size:2rem}
   .ami{font-size:.95rem}
   .heroInfo{padding:10px 10px 12px}
@@ -294,6 +352,58 @@ ul{margin-top:0;margin-bottom:0}
   .ripenessChip{font-size:.78rem;border-radius:14px}
 }
 
+
+/* ===== v2.27.2 Result Screen Polish ===== */
+.sectionTitle{font-size:1.18rem;color:#1f2937}
+.sectionTitle:before,.sectionTitle:after{color:var(--theme);font-size:.95rem}
+
+.hero{padding:18px 14px 18px;gap:12px}
+.heroInfo{border-radius:26px;padding:12px 12px 14px;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--theme) 10%, #fff)}
+.ripenessHeader{font-size:.92rem;min-height:32px}
+.crown{font-size:1.55rem}
+.ripeness{letter-spacing:.2px}
+.ami{font-size:1.04rem;font-weight:700}
+.statusLine{font-size:.97rem}
+.signalBadge,.clarityBadge{font-size:.95rem}
+.primaryBtn{
+  background:#fff;color:var(--ink);border:1px solid color-mix(in srgb,var(--theme) 22%, #fff);
+  box-shadow:0 8px 18px rgba(0,0,0,.06)
+}
+.primaryBtn .startIcon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--soft2);color:var(--theme)}
+.primaryBtn .startText{font-size:1.2rem;font-weight:1000}
+.heroMeta{gap:12px}
+.tapPill{min-height:52px;padding:11px 16px;font-size:1rem}
+.plusCircleBtn{width:52px;height:52px;font-size:2.1rem;background:var(--soft)}
+.metrics{gap:12px;margin:16px 0}
+.metric{align-items:flex-start;min-height:150px;padding:14px 14px 12px;border-radius:24px}
+.metric.wide{min-height:128px}
+.mIcon{width:62px;height:62px;font-size:1.75rem;background:var(--soft)}
+.mMain{width:100%}
+.mLabel{font-size:1rem;font-weight:800;color:#2b3138}
+.mValue{font-size:2rem;font-weight:1000;line-height:1.02;margin-top:4px}
+.mValue.good,.mValue.emph{color:var(--theme)}
+.mSub{font-size:.93rem;line-height:1.35;color:#606975;margin-top:6px;min-height:2.35em}
+.mStars{font-size:1.08rem;letter-spacing:1px;line-height:1.1;color:#f0bf1a;margin:4px 0 6px;white-space:nowrap}
+.bar{height:10px;margin-top:6px}
+.aiCard{border-radius:24px;padding:15px 14px;align-items:flex-start}
+.aiBot{width:64px;height:64px}
+.aiText{font-size:1.02rem}
+.mainBtns{margin:16px 0 10px}
+.mainBtns .btn,.subBtns .btn{min-height:62px;font-size:1.05rem}
+.mainBtns .btn{border-radius:18px}
+.subBtns .btn{border-radius:18px}
+.buyBadge.buy{background:#dff5e1;color:#166534}
+.buyBadge.maybe{background:#fff3cd;color:#8a6500}
+.buyBadge.no{background:#fee2e2;color:#b91c1c}
+@media(max-width:420px){
+  .metric{min-height:138px;padding:12px}
+  .mValue{font-size:1.7rem}
+  .mSub{font-size:.88rem}
+  .mStars{font-size:1rem}
+  .statusLine{font-size:.9rem}
+  .signalBadge,.clarityBadge{font-size:.88rem}
+}
+
 </style></head><body><div class="bgFruit"></div><div class="wrap">
 <header class="topbar"><button class="iconBtn" aria-label="เมนู">☰</button><div class="brand">Melody<span class="red">Melon</span>Tap <span class="melon">🍉</span></div><button class="iconBtn" id="shareBtn" aria-label="แชร์">⇧</button></header>
 <section id="homeScreen" class="homeScreen">
@@ -371,7 +481,7 @@ ul{margin-top:0;margin-bottom:0}
     <div class="clarityWrap"><span id="clarityBadge" class="clarityBadge clarity-hidden">-</span></div>
   </div>
 
-  <button id="startBtn" class="btn primaryBtn" type="button">🎙️ <span id="startBtnLabel">เริ่มวัด</span></button>
+  <button id="startBtn" class="btn primaryBtn" type="button"><span class="startIcon">🎙️</span><span id="startBtnLabel" class="startText">เริ่มวัด</span></button>
 
   <div class="heroMeta">
     <div class="tapPill">〰 วิเคราะห์จากการเคาะ <b><span id="tapProgressHero">0/3</span></b> ครั้ง</div>
@@ -380,7 +490,59 @@ ul{margin-top:0;margin-bottom:0}
 </section>
 
 <div class="resultLegacy" id="result">ยังไม่มีผลลัพธ์</div><div style="display:none"><span id="melonScore">-</span><span id="buyBadge" class="buyBadge">-</span><span id="scoreExplain">ยังไม่มีการประเมิน</span></div>
-<section class="metrics"><div class="metric"><div class="mIcon">▮</div><div><div class="mLabel">ความหวาน</div><div id="brixVal" class="mValue">-</div><div id="sweetnessText" class="mSub">-</div><div class="bar"><div id="brixBar" class="fill"></div></div></div></div><div class="metric"><div class="mIcon">✹</div><div><div class="mLabel">ความกรอบ</div><div id="firmVal" class="mValue">-</div><div id="firmText" class="mSub">-</div><div class="bar"><div id="firmBar" class="fill"></div></div></div></div><div class="metric"><div class="mIcon">●</div><div><div class="mLabel">ความฉ่ำ</div><div id="juiceVal" class="mValue">-</div><div id="juiceText" class="mSub">-</div><div class="bar"><div id="juiceBar" class="fill"></div></div></div></div><div class="metric"><div class="mIcon">○</div><div><div class="mLabel">โพรงภายใน</div><div id="hollowVal" class="mValue good">-</div><div id="hollowText" class="mSub">-</div><div class="bar"><div id="hollowBar" class="fill"></div></div></div></div><div class="metric wide"><div class="mIcon">🛡</div><div style="width:100%"><div class="mLabel">ความเชื่อมั่น</div><div id="confVal" class="mValue good">-</div><div id="groupVal" class="mSub">-</div><div class="bar"><div id="confBar" class="fill"></div></div></div></div></section>
+
+<section class="metrics">
+  <div class="metric">
+    <div class="mIcon">▮</div>
+    <div class="mMain">
+      <div class="mLabel">ความหวาน</div>
+      <div id="brixVal" class="mValue">-</div>
+      <div id="sweetnessText" class="mSub">-</div>
+      <div id="brixStars" class="mStars">☆☆☆☆☆</div>
+      <div class="bar"><div id="brixBar" class="fill"></div></div>
+    </div>
+  </div>
+  <div class="metric">
+    <div class="mIcon">✹</div>
+    <div class="mMain">
+      <div class="mLabel">ความกรอบ</div>
+      <div id="firmVal" class="mValue">-</div>
+      <div id="firmText" class="mSub">-</div>
+      <div id="firmStars" class="mStars">☆☆☆☆☆</div>
+      <div class="bar"><div id="firmBar" class="fill"></div></div>
+    </div>
+  </div>
+  <div class="metric">
+    <div class="mIcon">●</div>
+    <div class="mMain">
+      <div class="mLabel">ความฉ่ำ</div>
+      <div id="juiceVal" class="mValue">-</div>
+      <div id="juiceText" class="mSub">-</div>
+      <div id="juiceStars" class="mStars">☆☆☆☆☆</div>
+      <div class="bar"><div id="juiceBar" class="fill"></div></div>
+    </div>
+  </div>
+  <div class="metric">
+    <div class="mIcon">○</div>
+    <div class="mMain">
+      <div class="mLabel">โพรงภายใน</div>
+      <div id="hollowVal" class="mValue emph">-</div>
+      <div id="hollowText" class="mSub">-</div>
+      <div id="hollowStars" class="mStars">☆☆☆☆☆</div>
+      <div class="bar"><div id="hollowBar" class="fill"></div></div>
+    </div>
+  </div>
+  <div class="metric wide">
+    <div class="mIcon">🛡</div>
+    <div class="mMain">
+      <div class="mLabel">ความเชื่อมั่น</div>
+      <div id="confVal" class="mValue good">-</div>
+      <div id="groupVal" class="mSub">-</div>
+      <div id="confStars" class="mStars">☆☆☆☆☆</div>
+      <div class="bar"><div id="confBar" class="fill"></div></div>
+    </div>
+  </div>
+</section>
 <div class="aiCard"><div class="aiBot">🤖</div><div><div class="aiTitle">สรุปโดย AI</div><div id="aiSummaryText" class="aiText">ผลสรุปจะแสดงหลังวิเคราะห์เสร็จ</div></div></div>
 <div class="mainBtns"><button id="voiceBtn" class="btn" type="button">🔊 ฟังผล</button><button id="saveBtn" class="btn" type="button">▯ บันทึกผล</button><button id="resetBtn" class="btn" type="button">↺ เริ่มใหม่</button></div>
 <div class="subBtns"><button id="howToBtn" class="btn" type="button">? วิธีใช้</button><button id="settingsBtn" class="btn" type="button">⚙ ตั้งค่า</button></div>
@@ -561,7 +723,7 @@ function getFallback(k){
   return {Q:10.5,tau:0.11,fPeak:250,fMean:280,fStd:95,fVar:10000,hollow:0.18,bw:25,highRatio:0.1,lowRatio:0.5,flatness:0.15}[k] ?? 0;
 }
 function setBar(id,p){const el=document.getElementById(id); if(el) el.style.width=clamp(p,0,100)+"%";}
-function renderStars(n){n=clamp(Math.round(safe(n,0)),0,5);return "⭐".repeat(n)+"☆".repeat(5-n);}
+function renderStars(n){n=clamp(Math.round(safe(n,0)),0,5);return "⭐".repeat(n)+"☆".repeat(5-n);} function setStars(id,n){const el=document.getElementById(id); if(el) el.innerText=renderStars(n);}
 function toStars(value,min,max){return Math.round(clamp((safe(value,min)-min)/(max-min),0,1)*5);}
 function trimmedMean(values){
   const vals=values.filter(Number.isFinite).sort((a,b)=>a-b);
@@ -1361,12 +1523,33 @@ function analyzeSession(){
     ความเชื่อมั่น: ${renderStars(confStars)} (${conf.toFixed(0)}%)
   `;
   document.getElementById("melonScore").innerText=`${melonScore}/100`;const badge=document.getElementById("buyBadge");badge.className=`buyBadge ${buyClass}`;badge.innerText=buyText;document.getElementById("scoreExplain").innerText=scoreExplain;updateClarityBadgeV250(clarityV250);
-  document.getElementById("ripenessVal").innerText=ripe.label;document.getElementById("amiVal").innerText=ripe.detail;document.getElementById("brixVal").innerText=`${brix.toFixed(1)} °Brix`;document.getElementById("sweetnessText").innerText=`${sweetnessLabel(brix)} • ${renderStars(sweetStars)}`;
-  document.getElementById("firmVal").innerText=`${firmness.toFixed(1)} N`;document.getElementById("firmText").innerText=`${crispText} • ${renderStars(firmStars)}`;
-  document.getElementById("juiceVal").innerText=`${juice.toFixed(1)} %`;document.getElementById("juiceText").innerText=`${juiceLabel(juice)} • ${renderStars(juiceStars)}`;
-  document.getElementById("hollowVal").innerText=hollowPercent<12?"ไม่พบ":`${hollowPercent.toFixed(1)} %`;document.getElementById("hollowText").innerText=`${hollowText} • ${renderStars(hollowStars)}`;
-  document.getElementById("confVal").innerText=`${conf.toFixed(0)} %`;document.getElementById("groupVal").innerText=`f_peak เฉลี่ย ${avg.fPeak.toFixed(1)} Hz`;
-  setBar("brixBar",brix/14*100);setBar("firmBar",crispPct);setBar("juiceBar",juice);setBar("hollowBar",100-hollowPercent*2.5);setBar("confBar",conf);
+  document.getElementById("ripenessVal").innerText=ripe.label;
+  document.getElementById("amiVal").innerText=ripe.detail;
+  document.getElementById("brixVal").innerText=`${brix.toFixed(1)} °Brix`;
+  document.getElementById("sweetnessText").innerText=`${sweetnessLabel(brix)}`;
+  setStars("brixStars", sweetStars);
+
+  document.getElementById("firmVal").innerText=`${firmness.toFixed(1)} N`;
+  document.getElementById("firmText").innerText=`${crispText}`;
+  setStars("firmStars", firmStars);
+
+  document.getElementById("juiceVal").innerText=`${juice.toFixed(1)} %`;
+  document.getElementById("juiceText").innerText=`${juiceLabel(juice)}`;
+  setStars("juiceStars", juiceStars);
+
+  document.getElementById("hollowVal").innerText=hollowPercent<12?"ไม่พบ":`${hollowPercent.toFixed(1)} %`;
+  document.getElementById("hollowText").innerText=`${hollowText}`;
+  setStars("hollowStars", hollowStars);
+
+  document.getElementById("confVal").innerText=`${conf.toFixed(0)} %`;
+  document.getElementById("groupVal").innerText=`f_peak เฉลี่ย ${avg.fPeak.toFixed(1)} Hz • ${warnLowQuality ? "ควรวัดซ้ำเพื่อยืนยัน" : "ผลวิเคราะห์ชัดเจน"}`;
+  setStars("confStars", confStars);
+
+  setBar("brixBar",brix/14*100);
+  setBar("firmBar",crispPct);
+  setBar("juiceBar",juice);
+  setBar("hollowBar",100-hollowPercent*2.5);
+  setBar("confBar",conf);
   document.getElementById("featureList").innerHTML=`
     <li>Q: ${Quse.toFixed(2)}</li><li>tau: ${tauUsed.toFixed(3)}</li><li>f_peak: ${avg.fPeak.toFixed(1)} Hz</li><li>f_mean: ${fMeanUse.toFixed(1)} Hz</li><li>ripeness_extra_note: ${ripenessExtraNoteV248 || "-"}</li><li>f_std: ${fStdUse.toFixed(1)} Hz</li><li>f_variance: ${fVarUse.toFixed(1)}</li><li>hollow_index: ${hollowIndexUse.toFixed(3)}</li><li>Brix raw: ${brixRaw.toFixed(2)} °Bx → calibrated: ${brix.toFixed(2)} °Bx</li><li>Firmness raw model: ${firmnessRaw.toFixed(1)} N → calibrated: ${firmness.toFixed(1)} N</li><li>Juice raw: ${juiceRaw.toFixed(1)}% → calibrated: ${juice.toFixed(1)}%</li><li>Hollow raw: ${hollowRawPercent.toFixed(1)}% → v22.5: ${hollowPercentOriginal.toFixed(1)}% → v22.6: ${hollowPercent.toFixed(1)}%</li><li>high_ratio: ${highRatioUse.toFixed(3)}</li><li>low_ratio: ${lowRatioUse.toFixed(3)}</li><li>flatness: ${flatnessUse.toFixed(3)}</li><li>rolloff85: ${rolloff85Use.toFixed(1)} Hz</li><li>peak count: ${peakCountUse.toFixed(0)}</li><li>low_ratio: ${avg.lowRatio.toFixed(3)}</li><li>flatness: ${avg.flatness.toFixed(3)}</li><li>Audio120 ripeness label: ${ripenessLabel120}</li><li>Ripeness engine: V1 avg f_peak 3 taps = ${avg.fPeak.toFixed(1)} Hz</li><li>Perfect ripe meter: ${ripeMeter.toFixed(0)}/100</li><li>คุณภาพสัญญาณ: ${sigLabel} (${sigScore.toFixed(0)}%)</li><li>Q spread: ${qSpread.toFixed(2)}</li><li>tau fallback: ${tauFallbackCount}/${NUM_TAPS}</li><li>สถานะผล: ${warnLowQuality ? "ใช้ได้แต่ควรวัดซ้ำเพื่อยืนยัน" : "ใช้ได้"}</li>`;
   saveHistory(ripe.label,brix,conf,melonScore,buyText,sigScore);
@@ -1439,7 +1622,7 @@ function analyzeSession(){
     q_spread: Number(qSpread.toFixed(3)),
     tau_fallback_count: tauFallbackCount,
     measurement_status: warnLowQuality ? "ควรวัดซ้ำ" : "ใช้ได้",
-    model_version: "v2.27.1_HomeScreen_StartFlow",
+    model_version: "v2.27.3_CenterMelonRefined",
     boundary_ripeness_zone: isBoundaryRipeness
   });
 
@@ -1599,8 +1782,11 @@ function updateWatermelonColor(flesh,border){
 }
 function setPrimaryActionLabel(label,busy=false){
   const btn=document.getElementById("startBtn");
-  if(!btn) return;
-  btn.innerHTML=`${busy ? "⏺️" : "🎙️"} <span id="startBtnLabel">${label}</span>`;
+  const labelEl=document.getElementById("startBtnLabel");
+  if(!btn || !labelEl) return;
+  const icon = btn.querySelector ? btn.querySelector(".startIcon") : null;
+  if(icon) icon.innerText = busy ? "⏺️" : "🎙️";
+  labelEl.innerText = label;
 }
 function startMeasureFromTop(){
   if(listening) return;
@@ -1724,6 +1910,7 @@ function resetAll(){
   document.getElementById("scoreExplain").innerText = "ยังไม่มีการประเมิน";
 
   ["brixBar","firmBar","juiceBar","hollowBar","confBar"].forEach(id => setBar(id, 0));
+  ["brixStars","firmStars","juiceStars","hollowStars","confStars"].forEach(id => setStars(id, 0));
 
   document.getElementById("featureList").innerHTML = "";
   updateWatermelonColor("#ff4a52","#ef2b2d");
