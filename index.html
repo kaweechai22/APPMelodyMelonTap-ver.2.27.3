@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MelodyMelonTap v2.27.3 Center Melon Refined</title><link rel="manifest" href="manifest.json"/><link rel="icon" href="icon.png"/><meta name="theme-color" content="#df1f2d"/><style>
+<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MelodyMelonTap v2.28.3 Real Melon Assets Layout Safe</title><link rel="manifest" href="manifest.json"/><link rel="icon" href="icon.png"/><meta name="theme-color" content="#df1f2d"/><style>
 :root{
   --theme:#df1f2d; --theme2:#ff4d5e; --soft:#fff1f2; --soft2:#ffe4e6;
   --ink:#1f2933; --muted:#6b7280; --card:#ffffff; --line:#eceff3;
@@ -260,195 +260,460 @@ ul{margin-top:0;margin-bottom:0}
   .mainBtns,.subBtns{grid-template-columns:1fr 1fr 1fr}
 }
 
-/* ===== Home Screen v2.27.1 ===== */
-.homeScreen{animation:fadeIn .25s ease both}
+
+/* ===== Home Screen v2.28.0 ===== */
+.homeScreen{animation:fadeIn .25s ease both;padding-top:6px}
 .homeScreen[hidden],.resultScreen[hidden]{display:none!important}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-.homeTitle{text-align:center;margin:18px 0 8px}
-.homeTitle h1{margin:0;font-size:2.05rem;line-height:1.1;font-weight:1000;letter-spacing:.2px}
-.homeTitle .green{color:#147a30}.homeTitle .red{color:#df1f2d}
-.homeSubtitle{text-align:center;color:#4b5563;font-size:1.08rem;line-height:1.45;margin:0 auto 12px;max-width:420px}
-
-.homeFruit{position:relative;min-height:280px;display:flex;align-items:center;justify-content:center;margin-top:4px}
-.homeFruit::before,.homeFruit::after{
-  content:"";position:absolute;top:46%;width:34%;height:94px;opacity:.45;
-  background:repeating-linear-gradient(90deg,transparent 0 13px,color-mix(in srgb,#1f8a3b 45%,transparent) 13px 17px,transparent 17px 27px);
+.homeStage{
+  background:linear-gradient(180deg,#ffffff 0%,#fffefe 66%,#fdfdfd 100%);
+  border-radius:28px;
+}
+.homeBrandSpace{height:4px}
+.homeHeroGraphic{position:relative;min-height:320px;display:flex;align-items:flex-end;justify-content:center;margin:6px 0 8px}
+.homeHeroGraphic::before,.homeHeroGraphic::after{
+  content:"";position:absolute;top:102px;width:132px;height:92px;opacity:.85;
+  background:
+    repeating-linear-gradient(90deg,
+      transparent 0 11px,
+      rgba(143,207,111,.72) 11px 13px,
+      transparent 13px 23px);
   mask:radial-gradient(ellipse at center,#000 0 55%,transparent 72%);
 }
-.homeFruit::before{left:0}.homeFruit::after{right:0;transform:scaleX(-1)}
-.homeFruitGlow{position:absolute;width:260px;height:210px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,#dff5e1 70%,transparent),transparent 70%)}
-.homeMelonWhole{
-  position:absolute;z-index:2;width:208px;height:166px;border-radius:52% 48% 49% 51%/56% 54% 46% 44%;
+.homeHeroGraphic::before{left:6px}
+.homeHeroGraphic::after{
+  right:6px;
   background:
-   radial-gradient(circle at 48% -5%,#65743e 0 8px,transparent 9px),
-   radial-gradient(circle at 16% 58%,#e6cf65 0 4px,transparent 5px),
-   repeating-linear-gradient(18deg,rgba(183,224,85,.98) 0 9px,rgba(47,118,40,.98) 9px 24px,rgba(18,78,34,.98) 24px 42px),
-   linear-gradient(135deg,#1b5b2e,#77b03c);
-  transform:rotate(-4deg) translateX(-18px);
-  box-shadow:0 16px 24px rgba(0,0,0,.20)
+    repeating-linear-gradient(90deg,
+      transparent 0 11px,
+      rgba(255,155,146,.72) 11px 13px,
+      transparent 13px 23px);
+  mask:radial-gradient(ellipse at center,#000 0 55%,transparent 72%);
 }
-.homeMelonStem{position:absolute;z-index:3;top:28px;left:50%;width:34px;height:30px;border:6px solid #6b7c3a;border-left:0;border-bottom:0;border-radius:0 25px 0 0;transform:translateX(-16px) rotate(-20deg)}
-.homeMelonSlice{
-  position:absolute;z-index:4;width:214px;height:88px;left:50%;top:150px;
-  transform:translateX(-4%) rotate(-2deg);
-  clip-path:polygon(0 0,100% 0,92% 100%,8% 100%);
-  border-radius:0 0 120px 120px/0 0 86px 86px;
+.homeHeroGlow{
+  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  width:286px;height:246px;border-radius:50%;
+  background:radial-gradient(circle at center, rgba(244,248,236,.95) 0, rgba(248,250,243,.45) 58%, transparent 76%);
+}
+.homeWhole{
+  position:absolute;z-index:2;left:50%;bottom:34px;transform:translateX(-58%);
+  width:222px;height:230px;border-radius:50%;
   background:
-    radial-gradient(circle at 22% 54%,#151515 0 3px,transparent 4px),
-    radial-gradient(circle at 37% 45%,#151515 0 3px,transparent 4px),
-    radial-gradient(circle at 52% 60%,#151515 0 3px,transparent 4px),
-    radial-gradient(circle at 68% 47%,#151515 0 3px,transparent 4px),
-    radial-gradient(circle at 82% 58%,#151515 0 3px,transparent 4px),
-    linear-gradient(to bottom,#ff3f48 0 74%,#fff2f2 75% 82%,#6fb345 83% 100%);
-  box-shadow:0 12px 20px rgba(0,0,0,.18)
+    radial-gradient(circle at 50% 2%,#7d8448 0 7px,transparent 8px),
+    radial-gradient(circle at 47% 30%,rgba(255,255,255,.26) 0 17px,transparent 28px),
+    radial-gradient(circle at 44% 42%,rgba(255,255,255,.12) 0 48px,transparent 70px),
+    repeating-linear-gradient(11deg,#163f22 0 14px,#92bf45 14px 22px,#20592a 22px 39px,#b6d15e 39px 49px,#173d20 49px 64px);
+  box-shadow:
+    inset -16px -18px 22px rgba(0,0,0,.18),
+    inset 10px 12px 18px rgba(255,255,255,.10),
+    0 18px 26px rgba(0,0,0,.18);
 }
+.homeWhole::before{
+  content:"";position:absolute;left:102px;top:-15px;width:36px;height:26px;border:5px solid #6f7c37;border-left:0;border-bottom:0;border-radius:0 22px 0 0;transform:rotate(-22deg)
+}
+.homeSlice{
+  position:absolute;z-index:3;left:50%;bottom:48px;transform:translateX(-4%) rotate(-6deg);
+  width:226px;height:114px;clip-path:polygon(1% 2%,100% 0,93% 100%,8% 100%);
+  border-radius:0 0 140px 140px/0 0 112px 112px;
+  background:
+    radial-gradient(circle at 18% 51%,#131313 0 3px,transparent 4px),
+    radial-gradient(circle at 25% 42%,#131313 0 3px,transparent 4px),
+    radial-gradient(circle at 33% 56%,#131313 0 3px,transparent 4px),
+    radial-gradient(circle at 42% 44%,#131313 0 3px,transparent 4px),
+    radial-gradient(circle at 51% 58%,#131313 0 3px,transparent 4px),
+    radial-gradient(circle at 60% 46%,#131313 0 3px,transparent 4px),
+    radial-gradient(circle at 70% 58%,#131313 0 3px,transparent 4px),
+    radial-gradient(circle at 79% 49%,#131313 0 3px,transparent 4px),
+    linear-gradient(to bottom,#ff5f64 0 72%,#fff7f0 73% 81%,#7ab548 82% 100%);
+  box-shadow:
+    inset 0 -12px 20px rgba(255,255,255,.14),
+    0 14px 18px rgba(0,0,0,.18)
+}
+.homeHeadline{text-align:center;margin:0 0 4px}
+.homeHeadline h1{margin:0;font-size:3.05rem;line-height:1;font-weight:1000;letter-spacing:-.4px;color:#1d2827}
+.homeHeadline .greenWord{color:#152c28}
+.homeHeadline .redWord{color:#f14244}
+.homeSubtitle{text-align:center;color:#4d545e;font-size:1.08rem;line-height:1.52;margin:0 auto 18px;max-width:420px}
 
 .homeStartBtn{
-  width:100%;min-height:66px;border:0;border-radius:999px;
-  background:linear-gradient(135deg,#ef2b2d,#d7192b);color:#fff;
-  font-size:1.45rem;font-weight:1000;display:flex;align-items:center;justify-content:center;gap:12px;
-  box-shadow:0 18px 30px rgba(223,31,45,.28);cursor:pointer;margin:4px 0 14px
+  width:100%;min-height:68px;border:0;border-radius:999px;
+  background:linear-gradient(135deg,#ff6366,#ff353a);
+  color:#fff;font-size:1.45rem;font-weight:1000;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  box-shadow:0 14px 28px rgba(242,66,68,.28);cursor:pointer;margin:0 0 12px;
 }
-.homeStartBtn .micCircle{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:1.45rem}
-
-.homeTip{
-  display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #d9eadc;border-radius:20px;
-  padding:13px 16px;box-shadow:0 8px 20px rgba(15,23,42,.05);margin:0 0 16px
+.homeStartBtn .startLabel{line-height:1}
+.homeStartBtn .soundMark{
+  font-size:1.35rem;font-weight:700;letter-spacing:1px;opacity:.96
 }
-.homeTipIcon{width:58px;height:58px;border-radius:16px;background:#edf9ef;display:grid;place-items:center;font-size:2rem}
-.homeTip b{color:#147a30;font-size:1.05rem}.homeTip p{margin:3px 0 0;color:#4b5563}
-
-.ripenessLegendBox{background:#fff;border:1px solid var(--line);border-radius:22px;padding:12px;box-shadow:0 8px 20px rgba(15,23,42,.04);margin-bottom:16px}
-.ripenessLegendTitle{text-align:center;font-weight:900;margin-bottom:10px;color:#25313b}
-.ripenessChips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.ripenessChip{min-height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:.88rem;font-weight:900;border:1px solid transparent;padding:6px;text-align:center}
-.ripenessChip.raw{background:#eef9f0;color:#1f8a3b;border-color:#d6efdc}
-.ripenessChip.near{background:#fff7df;color:#d99a00;border-color:#f4df9b}
-.ripenessChip.ripe{background:#fff0f1;color:#df1f2d;border-color:#f5cfd3}
-.ripenessChip.bad{background:#f4f4f5;color:#5f6368;border-color:#e5e7eb}
-
-.homeTools{background:#fff;border:1px solid var(--line);border-radius:22px;display:grid;grid-template-columns:1fr 1fr 1fr;overflow:hidden;box-shadow:0 8px 20px rgba(15,23,42,.04)}
-.homeToolBtn{border:0;background:#fff;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:900;color:#147a30;cursor:pointer}
-.homeToolBtn:not(:last-child){border-right:1px solid var(--line)}
-.homeToolIcon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#eff8ef;font-size:1.35rem}
-.homeToolBtn:nth-child(2){color:#d99a00}.homeToolBtn:nth-child(2) .homeToolIcon{background:#fff6dc}
-.homeToolBtn:nth-child(3){color:#1f8a3b}
-
-.homeBottomFruit{height:90px;margin:8px -14px -28px;background:
-  radial-gradient(ellipse at 88% 82%,#ff4a52 0 28%,#fff 29% 35%,#6fb345 36% 42%,transparent 43%),
-  radial-gradient(ellipse at 18% 80%,rgba(86,157,69,.25),transparent 55%);
-  opacity:.9
+.homePreviewLink{
+  width:100%;text-align:center;margin:8px 0 22px;font-size:1.05rem;font-weight:800;color:#ef4346;cursor:pointer;background:none;border:0
 }
+.sectionDivider{
+  display:flex;align-items:center;gap:14px;margin:16px 0 14px;color:#25313b;font-weight:1000;font-size:1.03rem;justify-content:center
+}
+.sectionDivider::before,.sectionDivider::after{
+  content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#dfe6dc,transparent)
+}
+.sectionDivider .dot{color:#8ec35f;font-size:1.1rem;line-height:1}
+
+.featureGrid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px
+}
+.featureCard{
+  background:#fff;border:1px solid #eef0f2;border-radius:18px;padding:14px 8px 12px;
+  box-shadow:0 8px 18px rgba(15,23,42,.04);text-align:center
+}
+.featureIcon{
+  width:50px;height:50px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;font-size:1.65rem;border:1px solid #f0f0f0
+}
+.featureCard:nth-child(1) .featureIcon{background:#fff0f1;color:#f25563}
+.featureCard:nth-child(2) .featureIcon{background:#fff7e8;color:#f5ad2e}
+.featureCard:nth-child(3) .featureIcon{background:#eef6ff;color:#66a5e8}
+.featureCard:nth-child(4) .featureIcon{background:#f5f1ff;color:#8d73d3}
+.featureCard:nth-child(5) .featureIcon{background:#eff8ef;color:#67b55e}
+.featureTitle{font-size:.94rem;font-weight:900;color:#1f2937;line-height:1.25;min-height:2.2em}
+.featureStars{font-size:1rem;letter-spacing:1px;margin-top:6px}
+.featureCard:nth-child(1) .featureStars{color:#f25563}
+.featureCard:nth-child(2) .featureStars{color:#f0b12b}
+.featureCard:nth-child(3) .featureStars{color:#6a9de7}
+.featureCard:nth-child(4) .featureStars{color:#8d73d3}
+.featureCard:nth-child(5) .featureStars{color:#67b55e}
+
+.ripenessBand{
+  display:grid;grid-template-columns:repeat(4,1fr);border-radius:999px;overflow:hidden;background:#f3f4f6;box-shadow:0 6px 14px rgba(15,23,42,.05);margin:0 0 20px
+}
+.ripenessSeg{
+  min-height:54px;display:flex;align-items:center;justify-content:center;gap:8px;
+  color:#fff;font-size:1.04rem;font-weight:1000
+}
+.ripenessSeg.raw{background:#7bc35a}
+.ripenessSeg.near{background:#f0b626}
+.ripenessSeg.ripe{background:#f44949}
+.ripenessSeg.bad{background:#d7d8dc;color:#50545a}
+
+.bottomTools{
+  display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch;
+  margin-top:6px
+}
+.bottomTool{
+  background:none;border:0;padding:10px 8px 8px;color:#444;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;
+  font-size:1.02rem;font-weight:900
+}
+.bottomTool:not(:last-child){border-right:1px solid #eceff3}
+.bottomTool .tIcon{font-size:1.4rem;color:#5c6268}
+.bottomTool .tText{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
+.bottomTool .tSub{font-size:.78rem;font-weight:500;color:#7a818b}
+.homeMockFooter{height:8px}
 
 @media(max-width:420px){
-  .homeTitle h1{font-size:1.78rem}
-  .homeSubtitle{font-size:.98rem}
-  .homeFruit{min-height:246px}
-  .homeMelonWhole{width:188px;height:148px}
-  .homeMelonSlice{width:190px;height:78px;top:140px}
-  .homeStartBtn{font-size:1.28rem;min-height:60px}
-  .ripenessChips{gap:6px}
-  .ripenessChip{font-size:.78rem;border-radius:14px}
+  .homeHeroGraphic{min-height:280px}
+  .homeHeroGraphic::before,.homeHeroGraphic::after{width:106px;height:82px;top:92px}
+  .homeWhole{width:190px;height:198px}
+  .homeSlice{width:192px;height:98px;bottom:40px}
+  .homeHeadline h1{font-size:2.58rem}
+  .homeSubtitle{font-size:1rem;margin-bottom:16px}
+  .homeStartBtn{min-height:62px;font-size:1.34rem}
+  .featureGrid{gap:8px}
+  .featureCard{padding:12px 6px 10px}
+  .featureIcon{width:44px;height:44px;font-size:1.4rem}
+  .featureTitle{font-size:.84rem}
+  .featureStars{font-size:.9rem}
+  .ripenessSeg{font-size:.92rem;min-height:50px}
+  .bottomTool{gap:6px;font-size:.96rem}
+  .bottomTool .tSub{font-size:.72rem}
 }
 
 
-/* ===== v2.27.2 Result Screen Polish ===== */
-.sectionTitle{font-size:1.18rem;color:#1f2937}
+
+
+/* ===== v2.28.1 Result Screen Mockup Aligned ===== */
+.sectionTitle{
+  font-size:1.18rem;color:#1f2937;font-weight:1000;letter-spacing:.2px;margin-top:4px
+}
 .sectionTitle:before,.sectionTitle:after{color:var(--theme);font-size:.95rem}
 
-.hero{padding:18px 14px 18px;gap:12px}
-.heroInfo{border-radius:26px;padding:12px 12px 14px;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--theme) 10%, #fff)}
-.ripenessHeader{font-size:.92rem;min-height:32px}
-.crown{font-size:1.55rem}
-.ripeness{letter-spacing:.2px}
-.ami{font-size:1.04rem;font-weight:700}
-.statusLine{font-size:.97rem}
-.signalBadge,.clarityBadge{font-size:.95rem}
-.primaryBtn{
-  background:#fff;color:var(--ink);border:1px solid color-mix(in srgb,var(--theme) 22%, #fff);
-  box-shadow:0 8px 18px rgba(0,0,0,.06)
+.hero{
+  padding:18px 14px 16px;
+  gap:14px;
+  background:#fff;
+  border:1px solid #eef0f2;
+  border-radius:30px;
+  box-shadow:0 10px 24px rgba(15,23,42,.05)
 }
-.primaryBtn .startIcon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--soft2);color:var(--theme)}
-.primaryBtn .startText{font-size:1.2rem;font-weight:1000}
+.heroVisual{align-items:center}
+.heroInfo{
+  border-radius:26px;padding:12px 12px 14px;background:linear-gradient(180deg,#fff,#fffdfd);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--theme) 14%, #fff)
+}
+.ripenessHeader{
+  display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 16px;
+  border-radius:999px;background:linear-gradient(135deg,var(--theme),var(--theme2));color:#fff;
+  font-size:.92rem;font-weight:900
+}
+.heroText{margin-top:8px}
+.crown{font-size:1.55rem;color:var(--theme)}
+.ripeness{letter-spacing:.2px;font-size:2.15rem;line-height:1;font-weight:1000}
+.ami{font-size:1rem;font-weight:700;color:#374151;margin-top:4px}
+.statusLine{font-size:.98rem}
+.heroBadgeRow{margin-top:10px}
+.signalBadge,.clarityBadge{
+  font-size:.95rem;border-radius:18px;padding:10px 14px;min-height:auto;line-height:1.35;font-weight:800
+}
+.primaryBtn{
+  background:#fff;color:var(--ink);border:1px solid color-mix(in srgb,var(--theme) 18%, #fff);
+  box-shadow:0 8px 18px rgba(0,0,0,.05);
+  min-height:66px;border-radius:22px
+}
+.primaryBtn .startIcon{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--theme) 10%, white);color:var(--theme)
+}
+.primaryBtn .startText{font-size:1.3rem;font-weight:1000}
 .heroMeta{gap:12px}
-.tapPill{min-height:52px;padding:11px 16px;font-size:1rem}
-.plusCircleBtn{width:52px;height:52px;font-size:2.1rem;background:var(--soft)}
-.metrics{gap:12px;margin:16px 0}
-.metric{align-items:flex-start;min-height:150px;padding:14px 14px 12px;border-radius:24px}
+.tapPill{
+  min-height:54px;padding:12px 16px;font-size:1rem;border-radius:999px;
+  border:1px solid color-mix(in srgb,var(--theme) 18%, #fff); background:#fff
+}
+.plusCircleBtn{
+  width:56px;height:56px;font-size:2.15rem;background:color-mix(in srgb,var(--theme) 12%, white);
+  color:var(--theme); border:0; box-shadow:none
+}
+.metrics{
+  gap:12px;margin:16px 0;
+}
+.metric{
+  align-items:flex-start;min-height:152px;padding:14px 14px 12px;border-radius:24px;
+  background:#fff;border:1px solid #eef0f2;box-shadow:0 8px 20px rgba(15,23,42,.04)
+}
 .metric.wide{min-height:128px}
-.mIcon{width:62px;height:62px;font-size:1.75rem;background:var(--soft)}
+.mIcon{
+  width:62px;height:62px;font-size:1.85rem;border-radius:50%;
+  display:grid;place-items:center;border:1px solid #f0f1f3
+}
+.metric:nth-child(1) .mIcon{background:#fdecef;color:#f03a48}
+.metric:nth-child(2) .mIcon{background:#fdecef;color:#ef3742}
+.metric:nth-child(3) .mIcon{background:#fdecef;color:#ef3742}
+.metric:nth-child(4) .mIcon{background:#fdecef;color:#ef3742}
+.metric.wide .mIcon{background:#fdecef;color:#8fb8d8}
 .mMain{width:100%}
 .mLabel{font-size:1rem;font-weight:800;color:#2b3138}
-.mValue{font-size:2rem;font-weight:1000;line-height:1.02;margin-top:4px}
+.mValue{font-size:2rem;font-weight:1000;line-height:1.02;margin-top:4px;color:#16181d}
 .mValue.good,.mValue.emph{color:var(--theme)}
 .mSub{font-size:.93rem;line-height:1.35;color:#606975;margin-top:6px;min-height:2.35em}
 .mStars{font-size:1.08rem;letter-spacing:1px;line-height:1.1;color:#f0bf1a;margin:4px 0 6px;white-space:nowrap}
-.bar{height:10px;margin-top:6px}
-.aiCard{border-radius:24px;padding:15px 14px;align-items:flex-start}
-.aiBot{width:64px;height:64px}
-.aiText{font-size:1.02rem}
-.mainBtns{margin:16px 0 10px}
-.mainBtns .btn,.subBtns .btn{min-height:62px;font-size:1.05rem}
-.mainBtns .btn{border-radius:18px}
-.subBtns .btn{border-radius:18px}
+.bar{
+  height:10px;margin-top:6px;border-radius:999px;background:#e9edf1;overflow:hidden
+}
+.bar .fill{background:linear-gradient(90deg,#ff6066,#f33a45)}
+.aiCard{
+  border-radius:24px;padding:15px 14px;align-items:flex-start;
+  border:1px solid #f1d8da;background:linear-gradient(180deg,#fffafa,#fff)
+}
+.aiBot{
+  width:64px;height:64px;border-radius:18px;background:#fff;box-shadow:0 8px 18px rgba(0,0,0,.05)
+}
+.aiTitle{color:var(--theme);font-size:1.55rem;font-weight:1000}
+.aiText{font-size:1.02rem;line-height:1.48}
+.mainBtns{
+  margin:16px 0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px
+}
+.mainBtns .btn{
+  min-height:62px;font-size:1.08rem;border-radius:18px;
+  background:linear-gradient(135deg,#ff5b61,#ef2b39);color:#fff;border:0;box-shadow:0 10px 18px rgba(239,43,57,.20)
+}
+.subBtns{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px
+}
+.subBtns .btn{
+  min-height:62px;font-size:1.05rem;border-radius:18px;background:#fff;color:#2d333b;border:1px solid #eceff3
+}
+details{
+  background:#fff;border:1px solid #eef0f2;border-radius:22px;padding:0 16px;margin-top:12px;box-shadow:0 8px 20px rgba(15,23,42,.03)
+}
+summary{font-weight:900;padding:16px 0}
 .buyBadge.buy{background:#dff5e1;color:#166534}
 .buyBadge.maybe{background:#fff3cd;color:#8a6500}
 .buyBadge.no{background:#fee2e2;color:#b91c1c}
 @media(max-width:420px){
-  .metric{min-height:138px;padding:12px}
-  .mValue{font-size:1.7rem}
+  .hero{padding:16px 12px 14px}
+  .ripeness{font-size:1.82rem}
+  .ami{font-size:.95rem}
+  .metric{min-height:140px;padding:12px}
+  .mIcon{width:58px;height:58px;font-size:1.7rem}
+  .mValue{font-size:1.72rem}
   .mSub{font-size:.88rem}
   .mStars{font-size:1rem}
   .statusLine{font-size:.9rem}
-  .signalBadge,.clarityBadge{font-size:.88rem}
+  .signalBadge,.clarityBadge{font-size:.88rem;padding:9px 12px}
+  .mainBtns{gap:10px}
+  .mainBtns .btn,.subBtns .btn{min-height:58px;font-size:1rem}
+}
+
+
+
+/* ===== v2.28.2 Real Melon Image Assets ===== */
+.homeHeroGraphic{
+  min-height:320px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 0 2px;
+}
+.homeHeroGraphic::before,.homeHeroGraphic::after{display:none!important}
+.homeHeroImg{
+  display:block;
+  width:100%;
+  max-width:480px;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 12px 14px rgba(0,0,0,.08));
+}
+.homeHeroGlow,.homeWhole,.homeSlice{display:none!important}
+
+.watermelon{
+  background:#fff!important;
+  overflow:hidden;
+}
+.watermelon .melonAsset{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:155%;
+  height:auto;
+  transform:translate(-50%,-49%);
+  object-fit:contain;
+  display:block;
+  z-index:2;
+  filter:drop-shadow(0 8px 10px rgba(0,0,0,.08));
+}
+.watermelon .melonWhole,
+.watermelon .melonSlice{display:none!important}
+body.state-raw .watermelon .melonAsset{
+  filter:hue-rotate(58deg) saturate(.66) brightness(1.13) drop-shadow(0 8px 10px rgba(0,0,0,.08));
+}
+body.state-near .watermelon .melonAsset{
+  filter:hue-rotate(16deg) saturate(.92) brightness(1.08) drop-shadow(0 8px 10px rgba(0,0,0,.08));
+}
+body.state-over .watermelon .melonAsset{
+  filter:grayscale(.75) brightness(1.08) contrast(.92) drop-shadow(0 8px 10px rgba(0,0,0,.08));
+}
+body.state-rot .watermelon .melonAsset{
+  filter:grayscale(1) brightness(.74) contrast(1.08) drop-shadow(0 8px 10px rgba(0,0,0,.08));
+}
+@media(max-width:420px){
+  .homeHeroGraphic{min-height:282px}
+  .homeHeroImg{max-width:430px}
+  .watermelon .melonAsset{width:162%}
+}
+
+
+/* ===== v2.28.3 Layout Safety For Real Melon Assets ===== */
+.homeStage,.homeHeroGraphic,.featureGrid,.ripenessBand,.bottomTools{position:relative}
+.homeHeroGraphic{overflow:visible;z-index:1}
+.homeHeroImg{
+  pointer-events:none;
+  user-select:none;
+  -webkit-user-drag:none;
+  max-height:320px;
+}
+.homeStartBtn,.homePreviewLink,.featureGrid,.ripenessBand,.bottomTools{
+  position:relative;
+  z-index:2;
+}
+.hero,.heroVisual,.heroInfo,.primaryBtn,.heroMeta,.metric,.aiCard,.mainBtns,.subBtns{
+  min-width:0;
+}
+.watermelon{
+  isolation:isolate;
+  flex:0 0 auto;
+}
+.watermelon .melonAsset{
+  pointer-events:none;
+  user-select:none;
+  -webkit-user-drag:none;
+  max-height:100%;
+}
+.tapAgainBtn{
+  z-index:8;
+}
+.metrics,.aiCard,.mainBtns,.subBtns,details{
+  position:relative;
+  z-index:1;
+}
+@media(max-width:420px){
+  .homeHeroImg{max-height:282px}
+  .homeStartBtn{margin-top:0}
 }
 
 </style></head><body><div class="bgFruit"></div><div class="wrap">
 <header class="topbar"><button class="iconBtn" aria-label="เมนู">☰</button><div class="brand">Melody<span class="red">Melon</span>Tap <span class="melon">🍉</span></div><button class="iconBtn" id="shareBtn" aria-label="แชร์">⇧</button></header>
+
 <section id="homeScreen" class="homeScreen">
-  <div class="homeTitle">
-    <h1><span class="green">พร้อมวัด</span><span class="red">คุณภาพแตงโม</span></h1>
-  </div>
-  <p class="homeSubtitle">วิเคราะห์ความสุก หวาน กรอบ น้ำฉ่ำ และโพรง<br>จากการเคาะเพียง 3 ครั้ง</p>
+  <div class="homeStage">
+    <div class="homeBrandSpace"></div>
 
-  <div class="homeFruit" aria-label="ภาพแตงโมและคลื่นเสียง">
-    <div class="homeFruitGlow"></div>
-    <div class="homeMelonStem"></div>
-    <div class="homeMelonWhole"></div>
-    <div class="homeMelonSlice"></div>
-  </div>
-
-  <button id="homeStartBtn" class="homeStartBtn" type="button">
-    <span class="micCircle">🎙️</span>
-    <span>เริ่มวัดเสียงเคาะ</span>
-  </button>
-
-  <div class="homeTip">
-    <div class="homeTipIcon">🍉👆</div>
-    <div>
-      <b>เคาะแตงโม 3 ครั้ง</b>
-      <p>ให้เสียงชัดและห่างกันเล็กน้อย</p>
+    <div class="homeHeroGraphic" aria-label="แตงโมและคลื่นเสียง">
+      <img class="homeHeroImg" src="assets/melon-home-hero-v2282.png" alt="แตงโมและคลื่นเสียง">
     </div>
-  </div>
 
-  <div class="ripenessLegendBox">
-    <div class="ripenessLegendTitle">ระดับความสุก</div>
-    <div class="ripenessChips">
-      <div class="ripenessChip raw">🌱 ดิบ</div>
-      <div class="ripenessChip near">☀️ ใกล้สุก</div>
-      <div class="ripenessChip ripe">🍉 สุกพอดี</div>
-      <div class="ripenessChip bad">⚠️ อาจเน่า/สุกเกิน</div>
+    <div class="homeHeadline">
+      <h1><span class="greenWord">เคาะ</span> <span class="redWord">ฟัง</span> <span class="greenWord">วิเคราะห์</span></h1>
     </div>
-  </div>
+    <p class="homeSubtitle">แอปวิเคราะห์คุณภาพแตงโมจากเสียงเคาะ 3 ครั้ง<br>รู้ผลแม่นยำ เลือกแตงโมได้อย่างมั่นใจ</p>
 
-  <div class="homeTools">
-    <button id="homeHistoryBtn" class="homeToolBtn" type="button"><span class="homeToolIcon">↺</span><span>ประวัติ</span><small>ดูผลที่ผ่านมา</small></button>
-    <button id="homeHowToBtn" class="homeToolBtn" type="button"><span class="homeToolIcon">📖</span><span>วิธีใช้</span><small>แนะนำการใช้งาน</small></button>
-    <button id="homeSettingsBtn" class="homeToolBtn" type="button"><span class="homeToolIcon">⚙️</span><span>ตั้งค่า</span><small>ปรับแต่ง</small></button>
-  </div>
+    <button id="homeStartBtn" class="homeStartBtn" type="button">
+      <span class="startLabel">เริ่มวัด</span>
+      <span class="soundMark">〰</span>
+    </button>
 
-  <div class="homeBottomFruit" aria-hidden="true"></div>
+    <button id="homePreviewBtn" class="homePreviewLink" type="button">ดูตัวอย่างผลลัพธ์ &nbsp;›</button>
+
+    <div class="sectionDivider"><span class="dot">•</span> แอปจะบอกอะไรบ้าง <span class="dot">•</span></div>
+    <div class="featureGrid">
+      <div class="featureCard">
+        <div class="featureIcon">❤</div>
+        <div class="featureTitle">ความหวาน</div>
+        <div class="featureStars">★★★☆☆</div>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">◎</div>
+        <div class="featureTitle">ความกรอบ</div>
+        <div class="featureStars">★★★☆☆</div>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">💧</div>
+        <div class="featureTitle">ความฉ่ำ</div>
+        <div class="featureStars">★★★☆☆</div>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">◌</div>
+        <div class="featureTitle">โพรงภายใน</div>
+        <div class="featureStars">★★★☆☆</div>
+      </div>
+      <div class="featureCard">
+        <div class="featureIcon">🛡</div>
+        <div class="featureTitle">ความเชื่อมั่น</div>
+        <div class="featureStars">★★★☆☆</div>
+      </div>
+    </div>
+
+    <div class="sectionDivider"><span class="dot">•</span> ระดับการสุก <span class="dot">•</span></div>
+    <div class="ripenessBand">
+      <div class="ripenessSeg raw">🌿 ดิบ</div>
+      <div class="ripenessSeg near">☀ ใกล้สุก</div>
+      <div class="ripenessSeg ripe">🍉 สุกพอดี</div>
+      <div class="ripenessSeg bad">⚠ อาจเน่า/สุกเกิน</div>
+    </div>
+
+    <div class="bottomTools">
+      <button id="homeHistoryBtn" class="bottomTool" type="button"><span class="tIcon">◷</span><span class="tText"><span>ประวัติ</span><span class="tSub"></span></span></button>
+      <button id="homeHowToBtn" class="bottomTool" type="button"><span class="tIcon">?</span><span class="tText"><span>วิธีใช้</span><span class="tSub"></span></span></button>
+      <button id="homeSettingsBtn" class="bottomTool" type="button"><span class="tIcon">⚙</span><span class="tText"><span>ตั้งค่า</span><span class="tSub"></span></span></button>
+    </div>
+    <div class="homeMockFooter"></div>
+  </div>
 </section>
 <div id="resultScreen" class="resultScreen" hidden>
 
@@ -458,6 +723,7 @@ ul{margin-top:0;margin-bottom:0}
   <div class="heroVisual">
     <div class="waterWrap">
       <div id="watermelon" class="watermelon" aria-label="รูปแตงโม">
+        <img class="melonAsset" src="assets/melon-result-hero-v2282.png" alt="แตงโม">
         <div class="melonWhole"></div>
         <div class="melonSlice"></div>
       </div>
@@ -481,7 +747,7 @@ ul{margin-top:0;margin-bottom:0}
     <div class="clarityWrap"><span id="clarityBadge" class="clarityBadge clarity-hidden">-</span></div>
   </div>
 
-  <button id="startBtn" class="btn primaryBtn" type="button"><span class="startIcon">🎙️</span><span id="startBtnLabel" class="startText">เริ่มวัด</span></button>
+  <button id="startBtn" class="btn primaryBtn" type="button"><span class="startIcon">🎙️</span><span id="startBtnLabel" class="startText">เริ่มวัดใหม่</span></button>
 
   <div class="heroMeta">
     <div class="tapPill">〰 วิเคราะห์จากการเคาะ <b><span id="tapProgressHero">0/3</span></b> ครั้ง</div>
@@ -503,7 +769,7 @@ ul{margin-top:0;margin-bottom:0}
     </div>
   </div>
   <div class="metric">
-    <div class="mIcon">✹</div>
+    <div class="mIcon">✷</div>
     <div class="mMain">
       <div class="mLabel">ความกรอบ</div>
       <div id="firmVal" class="mValue">-</div>
@@ -961,7 +1227,7 @@ async function startSession(){
     setStatus("ไม่สามารถเข้าถึงไมโครโฟนได้");
     if(startBtn) startBtn.disabled = false;
     setSignalQuality("ใช้งานไม่ได้", "bad");
-    setPrimaryActionLabel("เริ่มวัด", false);
+    setPrimaryActionLabel("เริ่มวัดใหม่", false);
   }
 }function estimateNoiseFloor(n){
   if(!listening)return;analyser.getFloatTimeDomainData(timeData);const rms=getRMS(timeData);noiseFloor=n===12?rms:0.85*noiseFloor+0.15*rms;
@@ -1622,7 +1888,7 @@ function analyzeSession(){
     q_spread: Number(qSpread.toFixed(3)),
     tau_fallback_count: tauFallbackCount,
     measurement_status: warnLowQuality ? "ควรวัดซ้ำ" : "ใช้ได้",
-    model_version: "v2.27.3_CenterMelonRefined",
+    model_version: "v2.28.3_RealMelonAssets_LayoutSafe",
     boundary_ripeness_zone: isBoundaryRipeness
   });
 
@@ -1958,6 +2224,10 @@ function showHomeHowTo(){
 function showHomeSettings(){
   alert("ตั้งค่า: เวอร์ชันนี้ใช้ค่ามาตรฐานสำหรับการวิเคราะห์เสียงเคาะแตงโม");
 }
+function showHomePreview(){
+  showResultScreen();
+  resetAll();
+}
 
 document.getElementById("startBtn").addEventListener("click",startSession);
 document.getElementById("resetBtn").addEventListener("click",resetAll);
@@ -1967,6 +2237,7 @@ const tapManualBtn=document.getElementById("tapManualBtn"); if(tapManualBtn) tap
 const howToBtn=document.getElementById("howToBtn"); if(howToBtn) howToBtn.addEventListener("click",()=>alert("วิธีใช้: กดเริ่มวัด แล้วเคาะแตงโม 3 ครั้งให้เสียงสม่ำเสมอ ระบบจะวิเคราะห์และอ่านผลให้โดยอัตโนมัติ"));
 const settingsBtn=document.getElementById("settingsBtn"); if(settingsBtn) settingsBtn.addEventListener("click",()=>alert("หน้าตั้งค่าจะเพิ่มในเวอร์ชันถัดไป"));
 const homeStartBtn=document.getElementById("homeStartBtn"); if(homeStartBtn) homeStartBtn.addEventListener("click",startFromHome);
+const homePreviewBtn=document.getElementById("homePreviewBtn"); if(homePreviewBtn) homePreviewBtn.addEventListener("click",showHomePreview);
 const homeHistoryBtn=document.getElementById("homeHistoryBtn"); if(homeHistoryBtn) homeHistoryBtn.addEventListener("click",openHomeHistory);
 const homeHowToBtn=document.getElementById("homeHowToBtn"); if(homeHowToBtn) homeHowToBtn.addEventListener("click",showHomeHowTo);
 const homeSettingsBtn=document.getElementById("homeSettingsBtn"); if(homeSettingsBtn) homeSettingsBtn.addEventListener("click",showHomeSettings);

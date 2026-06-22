@@ -1,0 +1,14 @@
+Patch v2.28.1 - Result Mockup Aligned
+
+1. ปรับหน้าแสดงผล (Result screen) ให้ใกล้ mockup มากขึ้น
+   - hero card แบบการ์ดใหญ่
+   - ปุ่มระดับการสุกเป็นแคปซูลสี
+   - ปุ่มเริ่มวัดใหม่ด้านล่าง hero เป็นปุ่มขาว
+   - แถบวิเคราะห์จากการเคาะ + ปุ่มวงกลมขวา
+   - cards ของค่าผลลัพธ์อ่านง่ายขึ้น
+   - AI summary card และปุ่มล่างจัดรูปแบบใหม่
+   - details/export/history ดูสะอาดขึ้น
+
+2. คง id และ logic หลักทั้งหมดไว้
+3. เปลี่ยน label เริ่มต้นของ startBtn เป็น "เริ่มวัดใหม่" ในหน้าผลลัพธ์
+4. ตรวจ JavaScript syntax และ runtime smoke tests หลังแก้

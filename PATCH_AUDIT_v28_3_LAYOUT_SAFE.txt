@@ -1,0 +1,19 @@
+Patch v2.28.3 - Layout Safe
+
+สิ่งที่ตรวจและป้องกัน:
+1. หน้าแรก
+   - homeHeroImg เป็นรูปจริงแต่ถูกจำกัด max-height
+   - ปุ่มเริ่มวัด/ลิงก์/การ์ด/แถบระดับการสุกมี z-index สูงกว่า flow ที่จำเป็น
+   - รูปไม่รับ pointer event จึงไม่บังการกดปุ่ม
+
+2. หน้าผลลัพธ์
+   - melonAsset ถูกจำกัดอยู่ในกรอบ .watermelon ด้วย overflow hidden
+   - pointer-events none ทำให้รูปไม่บังปุ่มค้อนหรือปุ่มอื่น
+   - tapAgainBtn z-index สูงกว่ารูป
+
+3. ตรวจเพิ่มเติม
+   - id สำคัญครบ
+   - asset รูปจริงทั้ง 2 ไฟล์มีอยู่
+   - JS syntax ผ่าน
+   - runtime smoke test ผ่าน
+   - Home -> Result flow ผ่าน
