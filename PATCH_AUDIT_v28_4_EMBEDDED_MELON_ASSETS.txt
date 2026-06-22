@@ -1,0 +1,17 @@
+Patch v2.28.4 - Embedded Melon Assets
+
+สาเหตุที่รูปไม่ขึ้นในแอปจริง:
+- เวอร์ชันก่อนหน้าใช้ path แบบ assets/melon-home-hero-v2282.png และ assets/melon-result-hero-v2282.png
+- ถ้า upload เฉพาะ index.html หรือ GitHub Pages ไม่ได้อัปโหลดโฟลเดอร์ assets ไปด้วย รูปจะไม่แสดง
+- บางครั้ง browser cache ก็ยังโหลด index เดิมหรือ path เดิม
+
+สิ่งที่แก้:
+1. ฝังรูปแตงโมจริงเป็น Base64 data URI ลงใน index.html โดยตรง
+2. หน้าแรก .homeHeroImg ไม่ต้องพึ่งไฟล์ assets อีก
+3. หน้าผลลัพธ์ .melonAsset ไม่ต้องพึ่งไฟล์ assets อีก
+4. ยังคงไฟล์ assets ไว้เป็น backup ใน zip
+5. เพิ่ม loading=eager เพื่อให้รูปโหลดทันที
+
+ผลลัพธ์:
+- ต่อให้ upload แค่ index.html รูปแตงโมก็ยังขึ้น
+- ลดปัญหา path ไม่ตรง / asset ไม่ถูกอัปโหลด / cache path เก่า

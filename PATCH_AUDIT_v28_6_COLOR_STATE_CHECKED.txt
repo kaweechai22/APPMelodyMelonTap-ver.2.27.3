@@ -1,0 +1,16 @@
+Patch v2.28.6 - Color State Melon Assets Checked
+
+ตรวจซ้ำพบจุดเล็ก:
+- ใน v2.28.5 รูปจะเปลี่ยนตาม group หลังวิเคราะห์แล้ว
+- แต่ resetAll ยังไม่ได้บังคับรูปกลับเป็น default C/สุกพอดี
+- ตอน load หน้าแรกก็ยังไม่ได้เรียก setResultMelonImage("C") แบบชัดเจน
+
+แก้แล้ว:
+1. resetAll() เรียก setResultMelonImage("C")
+2. ตอนโหลดหน้าเรียก setResultMelonImage("C")
+3. ผลวิเคราะห์ยังเรียก setResultMelonImage(group) เหมือนเดิม
+4. ตรวจครบอีกครั้ง:
+   - รูป embedded ครบ A/B/C/D/E
+   - ไม่มี id ซ้ำ
+   - JS syntax ผ่าน
+   - runtime smoke test ผ่าน
