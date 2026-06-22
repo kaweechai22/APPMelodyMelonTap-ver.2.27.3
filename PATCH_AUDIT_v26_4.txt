@@ -1,0 +1,8 @@
+APPMelodyMelonTap v2.26.4 ResultUI AutoAI
+- Rebuilt result UI to match supplied red result-screen concept
+- Keeps existing V1 3-tap ripeness engine and quality feature models
+- Adds auto AI reading after analyzeSession via speakSummaryAI
+- Adds manual voice button for repeat listening
+- Dynamic theme classes: raw green, near yellow, ripe red, over/rotten gray
+- Hidden legacy result text remains for share/export text compatibility
+- Main metric cards now display Firmness in N and Hollow as ไม่พบ when low risk
