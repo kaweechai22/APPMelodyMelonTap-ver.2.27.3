@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MelodyMelonTap v2.28.6 Color State Melon Assets Checked</title><link rel="manifest" href="manifest.json"/><link rel="icon" href="icon.png"/><meta name="theme-color" content="#df1f2d"/><style>
+<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MelodyMelonTap v2.29.8 Remove Test Beep Button</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.png"/><meta name="theme-color" content="#df1f2d"/><style>
 :root{
   --theme:#df1f2d; --theme2:#ff4d5e; --soft:#fff1f2; --soft2:#ffe4e6;
   --ink:#1f2933; --muted:#6b7280; --card:#ffffff; --line:#eceff3;
@@ -660,6 +660,277 @@ body.state-rot .watermelon .melonAsset{
   filter:drop-shadow(0 8px 10px rgba(0,0,0,.08))!important;
 }
 
+
+/* ===== v2.29.0 Professional UI Refinement ===== */
+body{
+  background:
+    radial-gradient(circle at 0% 0%, rgba(130,189,88,.12) 0, rgba(130,189,88,0) 28%),
+    radial-gradient(circle at 100% 18%, rgba(255,120,120,.10) 0, rgba(255,120,120,0) 24%),
+    linear-gradient(180deg,#fbfbfc 0%,#f7f7f8 100%);
+}
+body::before,body::after{
+  content:"";position:fixed;pointer-events:none;inset:auto;z-index:0;opacity:.35;
+}
+body::before{
+  left:-80px;bottom:120px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle, rgba(120,190,96,.18), rgba(120,190,96,0) 70%);
+}
+body::after{
+  right:-70px;top:180px;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,132,132,.16), rgba(255,132,132,0) 70%);
+}
+.appShell,.homeScreen,.resultScreen,.homeStage{position:relative;z-index:1}
+.homeStage,.resultScreen{
+  background:linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.88) 100%);
+  backdrop-filter: blur(4px);
+}
+.resultScreen::before,.homeStage::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.25;
+  background-image:
+    radial-gradient(circle at 16% 14%, rgba(136,193,96,.14) 0 2px, transparent 2px),
+    radial-gradient(circle at 84% 12%, rgba(255,141,141,.12) 0 2px, transparent 2px),
+    linear-gradient(90deg, transparent 0 8%, rgba(255,255,255,.6) 8% 9%, transparent 9% 100%);
+}
+.homeHeroGraphic,.heroVisual,.waterWrap{display:flex;align-items:center;justify-content:center}
+.waterWrap{width:100%}
+.watermelon{
+  margin-inline:auto;
+  width:min(100%, 332px);
+  aspect-ratio:1/1;
+  overflow:hidden;
+  box-shadow:0 18px 34px rgba(15,23,42,.08);
+}
+.watermelon .melonAsset{
+  left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;
+  width:138%!important;height:auto;object-fit:contain;object-position:center center;
+}
+.hero{
+  background:linear-gradient(180deg, rgba(255,255,255,.97), rgba(255,255,255,.93));
+  border:1px solid rgba(233,237,240,.9);
+}
+.heroVisual{align-items:center;justify-content:center}
+.heroInfo{gap:10px}
+.measureActions{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;align-items:stretch}
+.primaryBtn,.secondaryBtn{
+  width:100%;min-height:58px;border:0;border-radius:18px;font-size:1.12rem;font-weight:900;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.primaryBtn{
+  background:linear-gradient(135deg,var(--theme),var(--theme2));color:#fff;
+  box-shadow:0 12px 24px color-mix(in srgb,var(--theme) 28%, transparent);
+}
+.secondaryBtn{
+  background:#fff;color:var(--theme);border:1.5px solid color-mix(in srgb,var(--theme) 28%, #fff);
+  box-shadow:0 8px 18px rgba(15,23,42,.05);
+}
+.heroMeta{
+  display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:2px;
+}
+.tapPill{min-height:52px;display:flex;align-items:center;padding:0 16px}
+.plusCircleBtn{
+  width:64px;height:64px;border-radius:20px;border:0;
+  background:linear-gradient(135deg,var(--theme),var(--theme2));color:#fff;font-size:2rem;font-weight:900;
+  box-shadow:0 12px 24px color-mix(in srgb,var(--theme) 26%, transparent);
+}
+.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.metric{
+  min-height:208px;padding:16px 14px;border-radius:22px;
+  background:linear-gradient(180deg,#ffffff,#fffefe);
+  border:1px solid #edf0f2;box-shadow:0 10px 24px rgba(15,23,42,.04);
+  display:grid;grid-template-columns:74px 1fr;align-items:start;gap:14px;
+}
+.metric.wide{grid-column:1/-1;min-height:154px}
+.mIcon{
+  width:74px;height:74px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(255,233,236,.95);color:var(--theme);
+  font-size:1.42rem;font-weight:900;line-height:1;
+}
+.metric:nth-child(1) .mIcon{font-size:1.1rem;letter-spacing:.02em}
+.metric:nth-child(2) .mIcon{font-size:1.55rem}
+.metric:nth-child(3) .mIcon{font-size:1.6rem}
+.metric:nth-child(4) .mIcon{font-size:1.7rem}
+.metric:nth-child(5) .mIcon{font-size:1.45rem}
+.mMain{display:flex;flex-direction:column;min-width:0;gap:3px}
+.mLabel{font-size:1rem;font-weight:900;color:#1f2937;line-height:1.2}
+.mValue{font-size:1.32rem;font-weight:1000;line-height:1.1;word-break:break-word}
+.mSub{font-size:.96rem;line-height:1.3;color:#4b5563;min-height:2.2em}
+.mStars{font-size:1.32rem;letter-spacing:1px;margin-top:auto}
+.bar{margin-top:8px}
+.aiCard{
+  margin-top:16px;padding:18px;border-radius:24px;
+  background:linear-gradient(180deg, rgba(255,251,251,.96), rgba(255,246,246,.96));
+  border:1px solid rgba(245,205,205,.8);box-shadow:0 10px 24px rgba(244,63,94,.06);
+}
+.aiBot{font-size:2rem}
+.aiTitle{font-size:1.45rem;font-weight:1000;color:#df2630}
+.aiText{font-size:1.06rem;line-height:1.58;color:#2c3138}
+.mainBtns{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
+.mainBtns .btn{
+  min-height:60px;border-radius:18px;font-size:1.16rem;font-weight:900;
+  background:linear-gradient(135deg,var(--theme),var(--theme2));color:#fff;border:0;
+  box-shadow:0 12px 24px rgba(244,63,94,.18);
+}
+.bottomTools{display:grid;grid-template-columns:repeat(3,1fr)}
+.bottomTools.singleTool{grid-template-columns:minmax(0,1fr);max-width:360px;margin:6px auto 0}
+.bottomTools.singleTool .bottomTool{justify-content:flex-start;padding-left:18px}
+.featureCard .featureIcon{font-weight:900}
+.featureCard:nth-child(1) .featureIcon{font-size:1.02rem;letter-spacing:.02em}
+.featureCard:nth-child(2) .featureIcon{font-size:1.6rem}
+.featureCard:nth-child(3) .featureIcon{font-size:1.55rem}
+.featureCard:nth-child(4) .featureIcon{font-size:1.65rem}
+.featureCard:nth-child(5) .featureIcon{font-size:1.45rem}
+.tapAgainBtn,#voiceBtn,#howToBtn,#settingsBtn,#homeHowToBtn,#homeSettingsBtn{display:none!important}
+@media(max-width:480px){
+  .hero{padding:16px 12px 14px;border-radius:26px}
+  .watermelon{width:min(100%, 300px)}
+  .watermelon .melonAsset{width:146%!important}
+  .measureActions{grid-template-columns:1fr 1fr}
+  .primaryBtn,.secondaryBtn{min-height:56px;font-size:1.04rem}
+  .metrics{gap:12px}
+  .metric{min-height:198px;padding:14px 12px;grid-template-columns:64px 1fr;gap:12px}
+  .mIcon{width:64px;height:64px}
+}
+
+
+/* ===== v2.29.1 Pixel-Perfect pass ===== */
+.hero{gap:14px 14px; align-items:start}
+.heroVisual{padding-top:4px}
+.heroMetaSingle{grid-template-columns:1fr !important}
+.heroMetaSingle .tapPill{width:100%; justify-content:center}
+.measureActions{margin-top:4px}
+.waterWrap{min-height:250px}
+.watermelon{
+  width:min(100%, 320px);
+  height:min(100vw - 120px, 320px);
+  max-height:320px;
+  margin-inline:auto;
+}
+.watermelon .melonAsset{
+  width:130% !important;
+  max-width:none !important;
+}
+.knockCount{font-size:1.02rem; font-weight:900; text-align:center; margin-top:2px}
+.metrics{grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; align-items:stretch}
+.metric{min-height:200px}
+.metric.wide{min-height:150px}
+.metric .mValue, .metric .mSub, .metric .mLabel{word-break:break-word}
+.aiCard{align-items:flex-start}
+.aiTitle{margin-bottom:4px}
+.aiText{white-space:normal}
+.mainBtns{max-width:340px;margin:16px auto 0}
+summary{font-size:1.03rem}
+.bottomTools.singleTool .bottomTool{min-height:74px}
+.homePreviewLink{margin-top:2px}
+.homeHeroGraphic{margin-bottom:14px}
+.homeHeroImg{max-width:min(100%, 560px); width:100%; height:auto; display:block; margin:0 auto; filter:drop-shadow(0 18px 30px rgba(0,0,0,.12));}
+.featureGrid{align-items:stretch}
+.featureCard{height:100%}
+.featureTitle{display:flex;align-items:center;justify-content:center}
+.featureStars{min-height:1.2em}
+.homeStage::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:120px; pointer-events:none; opacity:.32;
+  background: radial-gradient(ellipse at center bottom, rgba(241,110,110,.22) 0 30%, transparent 72%);
+}
+@media(max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .heroInfo{width:100%}
+  .watermelon{width:min(100%, 290px);height:290px}
+}
+@media(max-width:480px){
+  .metrics{grid-template-columns:1fr 1fr}
+  .metric{min-height:188px;padding:14px 12px}
+  .metric.wide{grid-column:1/-1;min-height:146px}
+  .mValue{font-size:1.24rem}
+  .mSub{font-size:.92rem}
+  .mainBtns{max-width:none}
+}
+
+
+/* ===== v2.29.2 Final Polish ===== */
+:root{
+  --surface-glass: linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.92) 100%);
+}
+.appShell{max-width:980px;margin:0 auto;}
+.topBar,.sectionTitle,.hero,.metrics,.aiCard,.mainBtns,details,.homeStage{max-width:940px;margin-left:auto;margin-right:auto}
+.topBar{padding-top:4px}
+.sectionTitle{margin-top:8px;margin-bottom:12px}
+.hero{
+  padding:18px 16px 18px;
+  border-radius:32px;
+  background:var(--surface-glass);
+  box-shadow:0 18px 40px rgba(15,23,42,.07);
+}
+.heroInfo{
+  align-self:center;
+}
+.ripenessCard{
+  background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,251,251,.95));
+  border:1px solid rgba(244,204,210,.7);
+  box-shadow:0 10px 22px rgba(15,23,42,.04);
+}
+.ripenessLabel{letter-spacing:.01em}
+.measureActions{margin-top:8px}
+.primaryBtn,.secondaryBtn{min-height:60px}
+.tapPill{
+  background:rgba(255,255,255,.95);
+  border:1.2px solid color-mix(in srgb, var(--theme) 16%, #fff);
+  box-shadow:0 8px 18px rgba(15,23,42,.04)
+}
+.metrics{margin-top:18px}
+.metric{
+  border-radius:24px;
+  box-shadow:0 12px 24px rgba(15,23,42,.045);
+  background:linear-gradient(180deg,#fff,#fffefe);
+}
+.metric.wide{
+  grid-template-columns:74px 1fr;
+}
+.mLabel{font-weight:900;color:#1f2937}
+.mValue{letter-spacing:-.01em}
+.mStars{opacity:.96}
+.fill{border-radius:999px}
+.aiCard{
+  padding:18px 18px;
+  border-radius:26px;
+}
+.aiBot{width:68px;height:68px;border-radius:22px;flex:0 0 68px}
+.aiBody{min-width:0}
+.aiTitle{line-height:1.1}
+.mainBtns .btn{font-size:1.12rem}
+details{border-radius:22px}
+summary{padding:18px 18px}
+.history{padding:0 16px 16px}
+.homeStage{
+  padding-bottom:18px;
+  border-radius:34px;
+  background:var(--surface-glass);
+  box-shadow:0 18px 40px rgba(15,23,42,.06);
+}
+.homeHeadline{margin-top:2px}
+.homeSub{max-width:680px;margin-inline:auto}
+.homeStartBtn{min-height:68px;border-radius:22px;font-size:1.3rem}
+.homePreviewLink{font-size:1.05rem}
+.featureGrid{margin-top:18px}
+.featureCard{
+  border-radius:22px;
+  background:linear-gradient(180deg,#fff,#fffefe);
+  box-shadow:0 10px 20px rgba(15,23,42,.04);
+}
+.ripenessBand{margin-top:18px}
+.ripenessSeg{font-weight:900}
+.bottomTools.singleTool .bottomTool{
+  border-radius:20px;
+  box-shadow:0 10px 20px rgba(15,23,42,.04);
+}
+@media(max-width:480px){
+  .appShell{padding-bottom:18px}
+  .hero{padding:16px 12px 16px}
+  .homeStage{padding-bottom:16px;border-radius:28px}
+  .homeStartBtn{font-size:1.18rem;min-height:62px}
+  .aiTitle{font-size:1.36rem}
+}
+
 </style></head><body><div class="bgFruit"></div><div class="wrap">
 <header class="topbar"><button class="iconBtn" aria-label="เมนู">☰</button><div class="brand">Melody<span class="red">Melon</span>Tap <span class="melon">🍉</span></div><button class="iconBtn" id="shareBtn" aria-label="แชร์">⇧</button></header>
 
@@ -686,12 +957,12 @@ body.state-rot .watermelon .melonAsset{
     <div class="sectionDivider"><span class="dot">•</span> แอปจะบอกอะไรบ้าง <span class="dot">•</span></div>
     <div class="featureGrid">
       <div class="featureCard">
-        <div class="featureIcon">❤</div>
+        <div class="featureIcon">Bx</div>
         <div class="featureTitle">ความหวาน</div>
         <div class="featureStars">★★★☆☆</div>
       </div>
       <div class="featureCard">
-        <div class="featureIcon">◎</div>
+        <div class="featureIcon">✦</div>
         <div class="featureTitle">ความกรอบ</div>
         <div class="featureStars">★★★☆☆</div>
       </div>
@@ -720,10 +991,8 @@ body.state-rot .watermelon .melonAsset{
       <div class="ripenessSeg bad">⚠ อาจเน่า/สุกเกิน</div>
     </div>
 
-    <div class="bottomTools">
-      <button id="homeHistoryBtn" class="bottomTool" type="button"><span class="tIcon">◷</span><span class="tText"><span>ประวัติ</span><span class="tSub"></span></span></button>
-      <button id="homeHowToBtn" class="bottomTool" type="button"><span class="tIcon">?</span><span class="tText"><span>วิธีใช้</span><span class="tSub"></span></span></button>
-      <button id="homeSettingsBtn" class="bottomTool" type="button"><span class="tIcon">⚙</span><span class="tText"><span>ตั้งค่า</span><span class="tSub"></span></span></button>
+    <div class="bottomTools singleTool">
+      <button id="homeHistoryBtn" class="bottomTool" type="button"><span class="tIcon">◷</span><span class="tText"><span>ประวัติ</span><span class="tSub">ดูผลการวัดที่ผ่านมา</span></span></button>
     </div>
     <div class="homeMockFooter"></div>
   </div>
@@ -740,11 +1009,7 @@ body.state-rot .watermelon .melonAsset{
         <div class="melonWhole"></div>
         <div class="melonSlice"></div>
       </div>
-      <button id="tapAgainBtn" class="tapAgainBtn" type="button" aria-label="เคาะอีกครั้ง">
-        <span class="tapAgainIcon">🔨</span>
-        <span class="tapAgainLabel">เคาะอีกครั้ง</span>
-      </button>
-    </div>
+</div>
     <div class="knockCount">เคาะ: <b><span id="tapProgress">0/3</span></b> ครั้ง</div>
   </div>
 
@@ -760,11 +1025,13 @@ body.state-rot .watermelon .melonAsset{
     <div class="clarityWrap"><span id="clarityBadge" class="clarityBadge clarity-hidden">-</span></div>
   </div>
 
-  <button id="startBtn" class="btn primaryBtn" type="button"><span class="startIcon">🎙️</span><span id="startBtnLabel" class="startText">เริ่มวัดใหม่</span></button>
+  <div class="measureActions">
+    <button id="startBtn" class="btn primaryBtn" type="button"><span class="startIcon">🎙️</span><span id="startBtnLabel" class="startText">เริ่มวัด</span></button>
+    <button id="resetBtn" class="btn secondaryBtn" type="button">↺ เริ่มวัดใหม่</button>
+  </div>
 
-  <div class="heroMeta">
+  <div class="heroMeta heroMetaSingle">
     <div class="tapPill">〰 วิเคราะห์จากการเคาะ <b><span id="tapProgressHero">0/3</span></b> ครั้ง</div>
-    <button id="tapManualBtn" class="plusCircleBtn" type="button" aria-label="เริ่มวัด">+</button>
   </div>
 </section>
 
@@ -772,7 +1039,7 @@ body.state-rot .watermelon .melonAsset{
 
 <section class="metrics">
   <div class="metric">
-    <div class="mIcon">▮</div>
+    <div class="mIcon">Bx</div>
     <div class="mMain">
       <div class="mLabel">ความหวาน</div>
       <div id="brixVal" class="mValue">-</div>
@@ -782,7 +1049,7 @@ body.state-rot .watermelon .melonAsset{
     </div>
   </div>
   <div class="metric">
-    <div class="mIcon">✷</div>
+    <div class="mIcon">✦</div>
     <div class="mMain">
       <div class="mLabel">ความกรอบ</div>
       <div id="firmVal" class="mValue">-</div>
@@ -792,7 +1059,7 @@ body.state-rot .watermelon .melonAsset{
     </div>
   </div>
   <div class="metric">
-    <div class="mIcon">●</div>
+    <div class="mIcon">💧</div>
     <div class="mMain">
       <div class="mLabel">ความฉ่ำ</div>
       <div id="juiceVal" class="mValue">-</div>
@@ -802,7 +1069,7 @@ body.state-rot .watermelon .melonAsset{
     </div>
   </div>
   <div class="metric">
-    <div class="mIcon">○</div>
+    <div class="mIcon">◌</div>
     <div class="mMain">
       <div class="mLabel">โพรงภายใน</div>
       <div id="hollowVal" class="mValue emph">-</div>
@@ -822,10 +1089,9 @@ body.state-rot .watermelon .melonAsset{
     </div>
   </div>
 </section>
-<div class="aiCard"><div class="aiBot">🤖</div><div><div class="aiTitle">สรุปโดย AI</div><div id="aiSummaryText" class="aiText">ผลสรุปจะแสดงหลังวิเคราะห์เสร็จ</div></div></div>
-<div class="mainBtns"><button id="voiceBtn" class="btn" type="button">🔊 ฟังผล</button><button id="saveBtn" class="btn" type="button">▯ บันทึกผล</button><button id="resetBtn" class="btn" type="button">↺ เริ่มใหม่</button></div>
-<div class="subBtns"><button id="howToBtn" class="btn" type="button">? วิธีใช้</button><button id="settingsBtn" class="btn" type="button">⚙ ตั้งค่า</button></div>
-<details><summary>ข้อมูลเพิ่มเติม / Export</summary><div class="extraRow"><button id="clearCsvBtn" class="smallBtn" onclick="clearMeasurementsCSV()" type="button">ล้างข้อมูล CSV</button><button id="testBeepBtn" class="smallBtn" onclick="playWarningBeep('medium')" type="button">ทดสอบเสียงเตือน</button><button class="smallBtn" onclick="exportMeasurementsCSV()" type="button">Export CSV</button></div><ul id="featureList"></ul></details><details><summary>ประวัติล่าสุด</summary><ul id="history" class="history"></ul></details>
+<div class="aiCard"><div class="aiBot">🤖</div><div><div class="aiTitle">สรุปโดย AI</div><div id="aiSummaryText" class="aiText">ผลสรุปโดย AI จะปรากฏและอ่านออกเสียงอัตโนมัติหลังวิเคราะห์เสร็จ</div></div></div>
+<div class="mainBtns"><button id="saveBtn" class="btn" type="button">▯ บันทึกผล</button></div>
+<details><summary>ข้อมูลเพิ่มเติม / Export</summary><div class="extraRow"><button id="clearCsvBtn" class="smallBtn" onclick="clearMeasurementsCSV()" type="button">ล้างข้อมูล CSV</button><button class="smallBtn" onclick="exportMeasurementsCSV()" type="button">Export CSV</button></div><ul id="featureList"></ul></details><details><summary>ประวัติล่าสุด</summary><ul id="history" class="history"></ul></details>
 </div></div><script>
 let lastKnockTimeV2483 = -Infinity;
 
@@ -1254,7 +1520,7 @@ async function startSession(){
     setStatus("ไม่สามารถเข้าถึงไมโครโฟนได้");
     if(startBtn) startBtn.disabled = false;
     setSignalQuality("ใช้งานไม่ได้", "bad");
-    setPrimaryActionLabel("เริ่มวัดใหม่", false);
+    setPrimaryActionLabel("เริ่มวัด", false);
   }
 }function estimateNoiseFloor(n){
   if(!listening)return;analyser.getFloatTimeDomainData(timeData);const rms=getRMS(timeData);noiseFloor=n===12?rms:0.85*noiseFloor+0.15*rms;
@@ -1331,7 +1597,7 @@ function loop(){
         listening = false;
         analyzeSession();
         document.getElementById("startBtn").disabled = false;
-        setPrimaryActionLabel("เริ่มวัดใหม่",false);
+        setPrimaryActionLabel("เริ่มวัด",false);
         return;
       }
 
@@ -1858,6 +2124,10 @@ function analyzeSession(){
     hollowPercent,
     melonScore,
     buyText,
+    confidence: conf,
+    brix,
+    firmness,
+    juice,
     clarityText: clarityV250 ? clarityV250.text : ""
   });
   
@@ -1916,19 +2186,19 @@ function analyzeSession(){
     q_spread: Number(qSpread.toFixed(3)),
     tau_fallback_count: tauFallbackCount,
     measurement_status: warnLowQuality ? "ควรวัดซ้ำ" : "ใช้ได้",
-    model_version: "v2.28.6_ColorStateMelonAssets_Checked",
+    model_version: "v2.29.8_RemoveTestBeepButton",
     boundary_ripeness_zone: isBoundaryRipeness
   });
 
 
 setStatus("ตรวจวัดเสร็จแล้ว");
-setPrimaryActionLabel("เริ่มวัดใหม่",false);
+setPrimaryActionLabel("เริ่มวัด",false);
 }
 function showRetry(conf,sigLabel,sigScore,qSpread,tauSpread,tauFallbackCount){
   document.getElementById("result").style.backgroundColor="#fff3cd";document.getElementById("result").innerHTML=`ผลการวัดยังไม่นิ่ง<br>คุณภาพสัญญาณ: ${sigLabel} (${sigScore.toFixed(0)}%)<br>ความเชื่อมั่น: ${conf.toFixed(0)}%<br>กรุณาเคาะใหม่อีกครั้ง`;
   document.getElementById("confVal").innerText=`${conf.toFixed(0)} %`;document.getElementById("melonScore").innerText="-";const badge=document.getElementById("buyBadge");badge.className="buyBadge maybe";badge.innerText="ควรวัดใหม่";document.getElementById("scoreExplain").innerText="ผลรอบนี้ยังไม่นิ่งพอสำหรับการสรุป";setBar("confBar",conf);
   document.getElementById("featureList").innerHTML=`<li>Q spread: ${qSpread.toFixed(2)}</li><li>tau spread: ${tauSpread.toFixed(3)}</li><li>tau fallback: ${tauFallbackCount}/${NUM_TAPS}</li>`;
-  setStatus("ผลยังไม่นิ่ง กรุณาเคาะใหม่");setPrimaryActionLabel("เริ่มวัดใหม่",false);speakText("ผลการวัดยังไม่นิ่ง กรุณาเคาะใหม่อีกครั้ง");
+  setStatus("ผลยังไม่นิ่ง กรุณาเคาะใหม่");setPrimaryActionLabel("เริ่มวัด",false);speakText("ผลการวัดยังไม่นิ่ง กรุณาเคาะใหม่อีกครั้ง");
 }
 
 
@@ -1992,45 +2262,148 @@ function playWarningBeep(level="medium"){
 }
 
 
+function describeSweetnessLevel(value,label=""){
+  const v = Number(value || 0);
+  if(v >= 12.5) return "มีความหวานมาก";
+  if(v >= 11.0) return "มีความหวานกำลังดี";
+  if(v >= 9.5) return "มีความหวานปานกลาง";
+  return "มีความหวานน้อย";
+}
+function describeFirmnessLevel(value,label=""){
+  const v = Number(value || 0);
+  if(v >= 20) return "เนื้อค่อนข้างกรอบ";
+  if(v >= 15) return "เนื้อกรอบกำลังดี";
+  if(v >= 9) return "เนื้อเริ่มนิ่ม";
+  return "เนื้อนิ่ม";
+}
+function describeJuiceLevel(value,label=""){
+  const v = Number(value || 0);
+  if(v >= 68) return "มีความฉ่ำมาก";
+  if(v >= 58) return "มีความฉ่ำกำลังดี";
+  if(v >= 48) return "มีความฉ่ำปานกลาง";
+  return "มีความฉ่ำน้อย";
+}
+function describeConfidenceLevel(value){
+  const v = Number(value || 0);
+  if(v >= 90) return "ผลวิเคราะห์มีความเชื่อมั่นสูงมาก";
+  if(v >= 80) return "ผลวิเคราะห์มีความเชื่อมั่นสูง";
+  if(v >= 70) return "ผลวิเคราะห์มีความเชื่อมั่นอยู่ในระดับดี";
+  return "ผลวิเคราะห์มีความเชื่อมั่นปานกลาง ควรพิจารณาร่วมกับการเคาะซ้ำ";
+}
+function getRealisticQualityPhrases(summary){
+  const group = summary.group || "";
+  const brix = Number(summary.brix || 0);
+  if(group === "E"){
+    return {
+      sweet: "มีความหวานน้อย",
+      firm: "เนื้อยังแน่น",
+      juice: "มีความฉ่ำน้อย"
+    };
+  }
+  if(group === "D"){
+    return {
+      sweet: "มีความหวานปานกลาง",
+      firm: "เนื้อค่อนข้างแน่น",
+      juice: "มีความฉ่ำปานกลาง"
+    };
+  }
+  if(group === "C"){
+    return {
+      sweet: brix >= 12.5 ? "มีความหวานมาก" : "มีความหวานกำลังดี",
+      firm: "เนื้อกรอบกำลังดี",
+      juice: "มีความฉ่ำกำลังดี"
+    };
+  }
+  if(group === "B"){
+    return {
+      sweet: "มีความหวานมาก",
+      firm: "เนื้อเริ่มนิ่ม",
+      juice: "มีความฉ่ำมาก"
+    };
+  }
+  if(group === "A"){
+    return {
+      sweet: "คุณภาพภายในอาจเสื่อม",
+      firm: "เนื้อนิ่ม",
+      juice: "มีความฉ่ำมากผิดปกติ"
+    };
+  }
+  return {
+    sweet: describeSweetnessLevel(summary.brix, summary.sweetnessText || ""),
+    firm: describeFirmnessLevel(summary.firmness, summary.crispText || ""),
+    juice: describeJuiceLevel(summary.juice, summary.juiceText || "")
+  };
+}
+const AI_RESULT_SCRIPTS = {
+  A: {
+    display: "แตงโมลูกนี้อยู่ในระดับอาจเน่า",
+    speech: ["แตงโมลูกนี้อยู่ในระดับอาจเน่า"]
+  },
+  B: {
+    display: "แตงโมลูกนี้สุกเกิน",
+    speech: ["แตงโมลูกนี้สุกเกิน"]
+  },
+  C: {
+    display: "แตงโมลูกนี้สุกพอดี",
+    speech: ["แตงโมลูกนี้สุกพอดี"]
+  },
+  D: {
+    display: "แตงโมลูกนี้ใกล้สุก",
+    speech: ["แตงโมลูกนี้ใกล้สุก"]
+  },
+  E: {
+    display: "แตงโมลูกนี้ยังดิบ",
+    speech: ["แตงโมลูกนี้ยังดิบ"]
+  }
+};
 function speakSummaryAI(summary){
-  let parts=[];
-  let display="";
-  if(summary.group === "A" || summary.group === "B"){
-    parts.push("แตงโมลูกนี้อาจเน่าหรือสุกเกิน ไม่แนะนำให้ซื้อ");
-    display="แตงโมลูกนี้อาจเน่าหรือสุกเกิน ควรหลีกเลี่ยงหรือเปลี่ยนลูก";
-  }else if(summary.group === "C"){
-    parts.push("แตงโมลูกนี้สุกพอดี พร้อมรับประทาน");
-    display="แตงโมลูกนี้สุกพอดี รสหวานดี เนื้อค่อนข้างกรอบ มีความฉ่ำเหมาะสม";
-  }else if(summary.group === "D"){
-    parts.push("แตงโมลูกนี้ใกล้สุก ควรพิจารณาก่อนซื้อ");
-    display="แตงโมลูกนี้ใกล้สุก รสชาติเริ่มดีขึ้น แต่ยังไม่ถึงช่วงสุกพอดี";
-  }else if(summary.group === "E"){
-    parts.push("แตงโมลูกนี้ยังดิบ ไม่แนะนำให้รับประทานทันที");
-    display="แตงโมลูกนี้ยังดิบ เนื้อค่อนข้างแน่นและรสชาติยังไม่พัฒนา";
-  }else{
-    parts.push(summary.ripenessText || "วิเคราะห์ผลเรียบร้อยแล้ว");
-    display=summary.ripenessText || "วิเคราะห์ผลเรียบร้อยแล้ว";
+  const group = summary.group || "C";
+  const preset = AI_RESULT_SCRIPTS[group] || {display: summary.ripenessText || "วิเคราะห์ผลเรียบร้อยแล้ว", speech:[summary.ripenessText || "วิเคราะห์ผลเรียบร้อยแล้ว"]};
+  const displayParts = [preset.display];
+  const speechParts = [...preset.speech];
+
+  const q = getRealisticQualityPhrases(summary);
+  const sweetDesc = q.sweet;
+  const firmDesc = q.firm;
+  const juiceDesc = q.juice;
+  const confDesc = describeConfidenceLevel(summary.confidence);
+
+  displayParts.push(sweetDesc);
+  displayParts.push(firmDesc);
+  displayParts.push(`และ${juiceDesc}`);
+
+  speechParts.push(sweetDesc);
+  speechParts.push(firmDesc);
+  speechParts.push(`และ${juiceDesc}`);
+
+  if(Number(summary.hollowPercent) >= 20){
+    displayParts.push("มีโพรงภายใน");
+    speechParts.push("มีโพรงภายใน");
+  }else if(Number(summary.hollowPercent) >= 12){
+    displayParts.push("มีโพรงภายในเล็กน้อย");
+    speechParts.push("มีโพรงภายในเล็กน้อย");
+    speechParts.push("ควรเคาะซ้ำเพื่อยืนยันผล");
   }
-  parts.push(`ความหวาน${summary.sweetnessText || ""}`);
-  parts.push(`เนื้อ${summary.crispText || ""}`);
-  parts.push(summary.juiceText || "");
-  if(summary.hollowPercent >= 20){
-    parts.push("มีความเสี่ยงโพรงภายใน");
-    display += " และมีความเสี่ยงโพรงภายใน";
-  }else if(summary.hollowPercent >= 12){
-    parts.push("เริ่มมีสัญญาณเสี่ยงโพรงเล็กน้อย ควรเคาะซ้ำเพื่อยืนยัน");
-    display += " แต่เริ่มมีสัญญาณเสี่ยงโพรงเล็กน้อย";
-  }else{
-    display += " และไม่พบโพรงภายใน";
+
+  speechParts.push(confDesc);
+  if(summary.buyText) speechParts.push(summary.buyText);
+  if(summary.clarityText && summary.clarityText.includes("ควรเคาะซ้ำ") && Number(summary.hollowPercent) < 12){
+    speechParts.push("ควรเคาะซ้ำเพื่อยืนยันผล");
   }
-  if(summary.clarityText && summary.clarityText.includes("ควรเคาะซ้ำ")){ parts.push(summary.clarityText); }
-  if(summary.buyText){ parts.push(summary.buyText); }
-  const text=parts.filter(Boolean).join(", ");
-  lastSpeechText=text;
-  const ai=document.getElementById("aiSummaryText"); if(ai) ai.innerText=display;
-  const warn=(summary.group==="A"||summary.group==="B"||summary.hollowPercent>=12||(summary.clarityText&&summary.clarityText.includes("ควรเคาะซ้ำ")));
-  if(warn){ playWarningBeep(summary.hollowPercent>=20||summary.group==="A"||summary.group==="B"?"high":"medium"); setTimeout(()=>speakText(text),650); }
-  else{ setTimeout(()=>speakText(text),250); }
+
+  const display = displayParts.filter(Boolean).join(" ");
+  const text = speechParts.filter(Boolean).join(". ");
+  lastSpeechText = text;
+  const ai = document.getElementById("aiSummaryText");
+  if(ai) ai.innerText = display;
+
+  const warn = (group === "A" || group === "B" || Number(summary.hollowPercent) >= 12 || (summary.clarityText && summary.clarityText.includes("ควรเคาะซ้ำ")));
+  if(warn){
+    playWarningBeep(Number(summary.hollowPercent) >= 20 || group === "A" || group === "B" ? "high" : "medium");
+    setTimeout(() => speakText(text), 650);
+  }else{
+    setTimeout(() => speakText(text), 250);
+  }
 }
 
 function speakText(text){
@@ -2038,9 +2411,10 @@ function speakText(text){
     if(!text) return;
     window.speechSynthesis.cancel();
     window.speechSynthesis.resume && window.speechSynthesis.resume();
-    const u=new SpeechSynthesisUtterance(text);
+    const normalized = String(text).replace(/\s*,\s*/g, ". ").replace(/\s+/g, " ").trim();
+    const u=new SpeechSynthesisUtterance(normalized);
     u.lang="th-TH";
-    u.rate=0.92; u.pitch=1.0; u.volume=1;
+    u.rate=0.95; u.pitch=1.0; u.volume=1;
     const pickVoice=()=>{
       const voices=window.speechSynthesis.getVoices ? window.speechSynthesis.getVoices() : [];
       return voices.find(v=>v.lang&&v.lang.toLowerCase()==="th-th") || voices.find(v=>v.lang&&v.lang.toLowerCase().includes("th")) || voices[0];
@@ -2050,7 +2424,7 @@ function speakText(text){
     if(!v && window.speechSynthesis.onvoiceschanged!==undefined){
       window.speechSynthesis.onvoiceschanged=()=>{
         const vv=pickVoice();
-        if(vv && !window.speechSynthesis.speaking){ const u2=new SpeechSynthesisUtterance(text); u2.lang="th-TH"; u2.rate=0.92; u2.pitch=1.0; u2.volume=1; u2.voice=vv; window.speechSynthesis.speak(u2); }
+        if(vv && !window.speechSynthesis.speaking){ const u2=new SpeechSynthesisUtterance(normalized); u2.lang="th-TH"; u2.rate=0.95; u2.pitch=1.0; u2.volume=1; u2.voice=vv; window.speechSynthesis.speak(u2); }
       };
     }
   }catch(e){console.log(e);}
@@ -2215,7 +2589,7 @@ function resetAll(){
   lastSpeechText = "";
 
   const ai = document.getElementById("aiSummaryText");
-  if(ai) ai.innerText = "ผลสรุปจะแสดงหลังวิเคราะห์เสร็จ";
+  if(ai) ai.innerText = "ผลสรุปโดย AI จะปรากฏและอ่านออกเสียงอัตโนมัติหลังวิเคราะห์เสร็จ";
 
   const cb = document.getElementById("clarityBadge");
   if(cb){
