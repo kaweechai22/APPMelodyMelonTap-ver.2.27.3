@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MelodyMelonTap v2.30.5 Screenshot Patch AI Natural</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.png"/><meta name="theme-color" content="#df1f2d"/><style>
+<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MelodyMelonTap v2.30.7 Ripeness Color Aligned</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.png"/><meta name="theme-color" content="#df1f2d"/><style>
 :root{
   --theme:#df1f2d; --theme2:#ff4d5e; --soft:#fff1f2; --soft2:#ffe4e6;
   --ink:#1f2933; --muted:#6b7280; --card:#ffffff; --line:#eceff3;
@@ -1763,6 +1763,263 @@ summary{
   .hero .primaryBtn,.hero .secondaryBtn{font-size:.9rem!important}
 }
 
+
+/* ===== v2.30.6 centered result panel + modern analysis header ===== */
+.resultHeadline{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  margin:10px 0 16px!important;
+  padding:14px 16px!important;
+  border-radius:24px!important;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,.95), rgba(255,255,255,.75) 48%, rgba(255,255,255,.55) 100%),
+    linear-gradient(135deg, color-mix(in srgb,var(--soft) 84%, #fff), color-mix(in srgb,var(--soft2) 64%, #fff));
+  border:1px solid color-mix(in srgb,var(--theme) 12%, #fff)!important;
+  box-shadow:0 10px 24px rgba(15,23,42,.055);
+}
+.resultHeadline:before,
+.resultHeadline:after{display:none!important}
+.headlineBadge{
+  width:56px;height:56px;border-radius:18px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--theme),var(--theme2));
+  color:#fff;
+  box-shadow:0 10px 20px color-mix(in srgb,var(--theme) 25%, transparent);
+}
+.headlineIconSvg{width:30px;height:30px;display:block}
+.headlineText{
+  font-size:1.28rem;font-weight:1000;line-height:1.1;
+  color:#18212c;letter-spacing:-.02em;
+}
+.headlineSub{
+  font-size:.92rem;line-height:1.35;color:#5c6674;font-weight:700;
+  text-align:center;max-width:92%;
+}
+
+/* center everything inside ripeness result frame */
+.hero .ripenessProCard,
+.hero .heroInfo{
+  align-items:center!important;
+  text-align:center!important;
+}
+.hero .ripenessHeader{
+  align-self:center!important;
+  min-width:180px;
+  justify-content:center!important;
+}
+.hero .heroText{
+  width:100%!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:4px!important;
+  padding:2px 0 0!important;
+  text-align:center!important;
+}
+.hero .crown{
+  margin:0 auto!important;
+  display:block!important;
+}
+.hero .ripeness{
+  width:100%!important;
+  text-align:center!important;
+  margin:0!important;
+}
+.hero .ami{
+  width:100%!important;
+  text-align:center!important;
+  margin:0 auto!important;
+}
+.hero .statusLine{
+  width:100%!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+.hero .heroBadgeRow,
+.hero .clarityWrap{
+  width:100%!important;
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+}
+.hero .signalBadge,
+.hero .clarityBadge{
+  justify-content:center!important;
+  text-align:center!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* mobile refinement */
+@media(max-width:430px){
+  .resultHeadline{
+    padding:12px 14px!important;
+    gap:5px!important;
+    border-radius:22px!important;
+  }
+  .headlineBadge{
+    width:50px;height:50px;border-radius:16px;
+  }
+  .headlineIconSvg{width:27px;height:27px}
+  .headlineText{font-size:1.16rem!important}
+  .headlineSub{font-size:.84rem!important;max-width:100%}
+  .hero .ripenessHeader{min-width:160px!important}
+}
+
+
+/* ===== v2.30.7 screenshot-level alignment + dynamic ripeness color ===== */
+
+/* modern result header */
+.resultHeadline{
+  position:relative;
+  overflow:hidden;
+}
+.resultHeadline::before{
+  content:"";
+  position:absolute; inset:auto -40px -42px auto;
+  width:130px; height:130px; border-radius:50%;
+  background:radial-gradient(circle, color-mix(in srgb,var(--theme) 18%, transparent) 0, transparent 66%);
+  pointer-events:none;
+}
+.headlineBadge{
+  background:linear-gradient(135deg,var(--theme),var(--theme2))!important;
+}
+.headlineSub{
+  color:#51606f!important;
+}
+
+/* center and color the ripeness frame according to result */
+.hero .ripenessProCard,
+.hero .heroInfo{
+  background:
+    linear-gradient(180deg, color-mix(in srgb,var(--soft) 86%, #fff) 0%, #ffffff 100%)!important;
+  border:1px solid color-mix(in srgb,var(--theme) 22%, #fff)!important;
+  box-shadow:
+    0 14px 28px color-mix(in srgb,var(--theme) 10%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.85)!important;
+  align-items:center!important;
+  text-align:center!important;
+  gap:10px!important;
+}
+.hero .ripenessHeader{
+  align-self:center!important;
+  justify-content:center!important;
+  min-width:188px!important;
+  padding:8px 16px!important;
+  min-height:40px!important;
+  border-radius:18px!important;
+  background:linear-gradient(135deg,var(--theme),var(--theme2))!important;
+  color:#fff!important;
+  box-shadow:0 10px 18px color-mix(in srgb,var(--theme) 24%, transparent);
+}
+.hero .heroText{
+  width:100%!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:4px!important;
+  text-align:center!important;
+  padding:2px 0 0!important;
+}
+.hero .crown{
+  display:block!important;
+  margin:0 auto!important;
+  color:var(--theme)!important;
+  filter:drop-shadow(0 2px 4px color-mix(in srgb,var(--theme) 14%, transparent));
+}
+.hero .ripeness{
+  width:100%!important;
+  text-align:center!important;
+  color:var(--theme)!important;
+  font-size:2.08rem!important;
+  letter-spacing:-.02em!important;
+}
+.hero .ami{
+  width:100%!important;
+  text-align:center!important;
+  color:#39424d!important;
+  font-weight:800!important;
+}
+.hero .statusLine{
+  width:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  text-align:center!important;
+  padding:10px 12px!important;
+  border-radius:16px!important;
+  background:color-mix(in srgb,var(--soft) 72%, #fff)!important;
+  border:1px solid color-mix(in srgb,var(--theme) 12%, #fff)!important;
+  color:#374151!important;
+  font-weight:800!important;
+}
+.hero .statusDot{
+  background:var(--theme)!important;
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--theme) 14%, transparent)!important;
+}
+.hero .heroBadgeRow,
+.hero .clarityWrap{
+  width:100%!important;
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+}
+.hero .signalBadge,
+.hero .clarityBadge{
+  min-width:min(100%, 210px)!important;
+  justify-content:center!important;
+  text-align:center!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  border-radius:16px!important;
+  padding:9px 14px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45);
+}
+
+/* richer state colors specifically for the ripeness frame */
+body.state-raw .hero .ripenessProCard{
+  background:linear-gradient(180deg,#f4fff5 0%, #ffffff 100%)!important;
+  border-color:#9fe0ab!important;
+}
+body.state-near .hero .ripenessProCard{
+  background:linear-gradient(180deg,#fff9ea 0%, #ffffff 100%)!important;
+  border-color:#ffe09a!important;
+}
+body.state-ripe .hero .ripenessProCard{
+  background:linear-gradient(180deg,#fff3f3 0%, #ffffff 100%)!important;
+  border-color:#ffb7bd!important;
+}
+body.state-over .hero .ripenessProCard{
+  background:linear-gradient(180deg,#f6f7f9 0%, #ffffff 100%)!important;
+  border-color:#d6d9de!important;
+}
+body.state-rot .hero .ripenessProCard{
+  background:linear-gradient(180deg,#f1f2f4 0%, #ffffff 100%)!important;
+  border-color:#c6cad1!important;
+}
+
+/* small spacing polish from real screenshots */
+.hero{gap:12px 14px!important}
+.hero .measureActions{margin-top:10px!important}
+.hero .primaryBtn,.hero .secondaryBtn{min-height:60px!important}
+.metrics{margin-top:15px!important}
+.metric{box-shadow:0 11px 24px rgba(15,23,42,.055)!important}
+
+@media(max-width:430px){
+  .hero .ripenessHeader{min-width:170px!important; min-height:38px!important; padding:8px 14px!important}
+  .hero .ripeness{font-size:1.92rem!important}
+  .hero .ami{font-size:.95rem!important; line-height:1.32!important}
+  .hero .signalBadge,.hero .clarityBadge{min-width:unset!important; width:auto!important; max-width:100%!important; font-size:.89rem!important}
+  .headlineText{font-size:1.14rem!important}
+  .headlineSub{font-size:.83rem!important}
+}
+
 </style></head><body><div class="bgFruit"></div><div class="wrap">
 <header class="topbar"><button class="iconBtn" aria-label="เมนู">☰</button><div class="brand">Melody<span class="red">Melon</span>Tap <span class="melon">🍉</span></div><button class="iconBtn shareIconBtn" id="shareBtn" aria-label="แชร์ข้อมูล"><svg class="shareIconSvg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
   <circle cx="46" cy="16" r="8" fill="currentColor"/>
@@ -1863,7 +2120,20 @@ summary{
 </section>
 <div id="resultScreen" class="resultScreen" hidden>
 
-<div class="sectionTitle">ผลการวิเคราะห์</div>
+<div class="sectionTitle resultHeadline">
+  <span class="headlineBadge" aria-hidden="true">
+    <svg class="headlineIconSvg" viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+      <path d="M10 50h44" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M16 42l10-10 8 6 14-16" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="16" cy="42" r="4" fill="currentColor"/>
+      <circle cx="26" cy="32" r="4" fill="currentColor"/>
+      <circle cx="34" cy="38" r="4" fill="currentColor"/>
+      <circle cx="48" cy="22" r="4" fill="currentColor"/>
+    </svg>
+  </span>
+  <span class="headlineText">ผลการวิเคราะห์</span>
+  <span class="headlineSub">สรุปคุณภาพแตงโมจากเสียงเคาะโดย AI</span>
+</div>
 
 <section class="hero">
   <div class="heroVisual">
@@ -3091,7 +3361,7 @@ function analyzeSession(){
     q_spread: Number(qSpread.toFixed(3)),
     tau_fallback_count: tauFallbackCount,
     measurement_status: warnLowQuality ? "ควรวัดซ้ำ" : "ใช้ได้",
-    model_version: "v2.30.5_ScreenshotPatch_AINatural",
+    model_version: "v2.30.7_RipenessColorAligned",
     boundary_ripeness_zone: isBoundaryRipeness
   });
 
